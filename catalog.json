@@ -1,455 +1,455 @@
 [
  {
   "id": 1,
-  "code": "CA-ADT-202B",
-  "name": "FRIJOL ROJO DE SEDA PREMIUM DT  6/58OZ",
-  "upc": "797495904028",
-  "price": 36.99,
-  "category": "GROCERY"
- },
- {
-  "id": 2,
-  "code": "CC-ADT-101B",
+  "code": "DA-BDT-101",
   "name": "PAN DT CAMPIRANA 12/369 GR",
   "upc": "797495904332",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 3,
-  "code": "CC-ADT-102B",
+  "id": 2,
+  "code": "DA-BDT-102",
   "name": "PAN DT MARGARITA 12/385 GR",
   "upc": "797495904479",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 4,
-  "code": "CC-ADT-103B",
+  "id": 3,
+  "code": "DA-BDT-103",
   "name": "PAN DT  POLVORON DE COCO 12/20 OZ",
   "upc": "797495904486",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 5,
-  "code": "CC-ADT-104B",
+  "id": 4,
+  "code": "DA-BDT-104",
   "name": "PAN DT  POLVORON PUNTO ROJO 12/20 OZ",
   "upc": "797495904493",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 6,
-  "code": "CC-ADT-105B",
+  "id": 5,
+  "code": "DA-BDT-105",
   "name": "PAN DT  POLVORON ROJO 12/20 OZ",
   "upc": "797495904240",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 7,
-  "code": "CC-ADT-107B",
+  "id": 6,
+  "code": "DA-BDT-106",
   "name": "PAN DT  PASTEL DE PIÑA 10/16 OZ",
   "upc": "797495904509",
   "price": 4.75,
   "category": "BAKERY"
  },
  {
-  "id": 8,
-  "code": "CC-ADT-112B",
+  "id": 7,
+  "code": "DA-BDT-107",
   "name": "PAN DT  LENGUITAS 14/8 OZ",
   "upc": "797495904301",
   "price": 3.39,
   "category": "BAKERY"
  },
  {
-  "id": 9,
-  "code": "CC-ADT-151B",
+  "id": 8,
+  "code": "DA-BDT-108",
   "name": "PAN DT  ROSQUILLA PEQUEÑA 10/8 OZ",
   "upc": "797495904455",
   "price": 4.29,
   "category": "BAKERY"
  },
  {
-  "id": 10,
-  "code": "CC-ADT-152B",
+  "id": 9,
+  "code": "DA-BDT-109",
   "name": "PAN DT  ROSQUILLA MIX FAMILIAR 12/18 OZ",
   "upc": "797495904424",
   "price": 5.65,
   "category": "BAKERY"
  },
  {
-  "id": 11,
-  "code": "CC-ADT-153B",
+  "id": 10,
+  "code": "DA-BDT-110",
   "name": "PAN DT  ROSQUILLA MIX PEQUENA 12/8 OZ",
   "upc": "797495904431",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 12,
-  "code": "CC-ADT-154B",
+  "id": 11,
+  "code": "DA-BDT-111",
   "name": "PAN DT  ROSQUILLA D' OLANCHANO 10/7 OZ",
   "upc": "797495904400",
   "price": 5.49,
   "category": "BAKERY"
  },
  {
-  "id": 13,
-  "code": "CC-ADT-155B",
+  "id": 12,
+  "code": "DA-BDT-112",
   "name": "PAN DT  ROSQUILLA RELLENA 10/9 OZ",
   "upc": "797495904417",
   "price": 5.29,
   "category": "BAKERY"
  },
  {
-  "id": 14,
-  "code": "CC-ADT-156B",
-  "name": "PAN DT  QUESADILLA DE MAIZ 12/10 OZ",
-  "upc": "797495904554",
-  "price": 3.97,
-  "category": "BAKERY"
- },
- {
-  "id": 15,
-  "code": "CC-ADT-157B",
+  "id": 13,
+  "code": "DA-BDT-113",
   "name": "PAN DT  TUSTACA 12/6 OZ",
   "upc": "797495904448",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 16,
-  "code": "CC-ADT-201B",
+  "id": 14,
+  "code": "DA-BDT-114",
   "name": "PAN DT  SEMITA DE ARROZ 12/13 OZ",
   "upc": "797495904462",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 17,
-  "code": "CC-ADT-202B",
+  "id": 15,
+  "code": "DA-BDT-115",
   "name": "PAN DT  SEMITA DE YEMA 12/13 OZ",
   "upc": "797495904547",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 18,
-  "code": "CC-ADT-203B",
+  "id": 16,
+  "code": "DA-BDT-116",
   "name": "PAN DT  SEMITA LARGA 12/11 OZ",
   "upc": "797495904288",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 19,
-  "code": "CC-ADT-204B",
+  "id": 17,
+  "code": "DA-BDT-117",
   "name": "PAN DT  SEMITA REDONDA 12/13 OZ",
   "upc": "797495904271",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 20,
-  "code": "CC-ADT-205B",
+  "id": 18,
+  "code": "DA-BDT-118",
   "name": "PAN DT  SEMITA REDONDA CON PINA 12/410 GR",
   "upc": "797495904325",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
-  "id": 21,
-  "code": "CC-ADT-206B",
+  "id": 19,
+  "code": "DA-BDT-119",
   "name": "PAN DT SEMITA SAMARITANA 12/390 GR",
   "upc": "797495904264",
   "price": 3.97,
   "category": "BAKERY"
  },
  {
+  "id": 20,
+  "code": "DA-BDT-120",
+  "name": "PAN DT GALLETAS CON CHISPAS",
+  "upc": "797495901300",
+  "price": 3.59,
+  "category": "BAKERY"
+ },
+ {
+  "id": 21,
+  "code": "DA-BDT-121",
+  "name": "PAN DT COCONUT COOKIE",
+  "upc": "797495909214",
+  "price": 3.59,
+  "category": "BAKERY"
+ },
+ {
   "id": 22,
-  "code": "CC-ADT-251B",
+  "code": "DA-BDT-122",
+  "name": "PAN DT POLVORONES MIX",
+  "upc": "797495904608",
+  "price": 6.99,
+  "category": "BAKERY"
+ },
+ {
+  "id": 23,
+  "code": "DA-BDT-123",
   "name": "PAN DT  ALBOROTO 24/140 GR",
   "upc": "797495904257",
   "price": 2.97,
   "category": "BAKERY"
  },
  {
-  "id": 23,
-  "code": "",
+  "id": 24,
+  "code": "DA-BDT-124",
   "name": "PAN DT  ESPUMILLA 17/120 GR",
   "upc": "797495904233",
   "price": 3.1,
   "category": "BAKERY"
  },
  {
-  "id": 24,
-  "code": "DR-ADT-120B",
+  "id": 25,
+  "code": "DA-DDT-101",
   "name": "DT JUICE SOURSOP 24 CAN/16.57 OZ",
   "upc": "797495905612",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 25,
-  "code": "DR-ADT-121B",
+  "id": 26,
+  "code": "DA-DDT-102",
   "name": "DT JUICE MANGO 24 CAN/16.57 OZ",
   "upc": "797495905636",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 26,
-  "code": "DR-ADT-122B",
+  "id": 27,
+  "code": "DA-DDT-103",
   "name": "DT JUICE PASSION FRUIT 24 CAN/16.57 OZ",
   "upc": "797495905629",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 27,
-  "code": "DR-ADT-123B",
+  "id": 28,
+  "code": "DA-DDT-104",
   "name": "DT JUICE PINEAPPLE 24 CAN/16.57 OZ",
   "upc": "797495905797",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 28,
-  "code": "DR-ADT-124B",
+  "id": 29,
+  "code": "DA-DDT-105",
   "name": "DT JUICE PINK GUAVA 24 CAN/16.57 OZ",
   "upc": "797495905643",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 29,
-  "code": "DR-ADT-125B",
+  "id": 30,
+  "code": "DA-DDT-106",
   "name": "DT JUICE PINK PEACH 24 CAN/16.57 OZ",
   "upc": "797495905674",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 30,
-  "code": "DR-ADT-126B",
+  "id": 31,
+  "code": "DA-DDT-107",
   "name": "DT JUICE PINK APPLE 24 CAN/16.57 OZ",
   "upc": "797495905681",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 31,
-  "code": "DR-ADT-127B",
+  "id": 32,
+  "code": "DA-DDT-108",
   "name": "DT JUICE STRAWBERRY BANANA 24 CAN/16.57 OZ",
   "upc": "797495905728",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 32,
-  "code": "DR-ADT-128B",
+  "id": 33,
+  "code": "DA-DDT-109",
   "name": "DT JUICE LYCHEE 24 CAN/16.57 OZ",
   "upc": "797495905698",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 33,
-  "code": "DR-ADT-129B",
+  "id": 34,
+  "code": "DA-DDT-110",
   "name": "DT JUICE ORANGE CARROT 24 CAN/16.57 OZ",
   "upc": "797495905711",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 34,
-  "code": "DR-ADT-130B",
+  "id": 35,
+  "code": "DA-DDT-111",
   "name": "DT JUICE TAMARINDO 24 CAN/16.57 OZ",
   "upc": "797495905780",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 35,
-  "code": "DR-ADT-132B",
+  "id": 36,
+  "code": "DA-DDT-112",
   "name": "DT JUGO NARANJA 24 PET/500 ML",
   "upc": "797495905834",
   "price": 34.99,
   "category": "DRINKS"
  },
  {
-  "id": 36,
-  "code": "DR-ADT-101B",
+  "id": 37,
+  "code": "DA-DDT-113",
   "name": "DT COCONUT MILK ORIGINAL 12/16.6 OZ",
   "upc": "797495905001",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 37,
-  "code": "DR-ADT-102B",
+  "id": 38,
+  "code": "DA-DDT-114",
   "name": "DT COCONUT MILK STRAWBERRY 12/16.6 OZ",
   "upc": "797495905018",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 38,
-  "code": "DR-ADT-103B",
+  "id": 39,
+  "code": "DA-DDT-115",
   "name": "DT COCONUT MILK MANGO 12/16.6 OZ",
   "upc": "797495905025",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 39,
-  "code": "DR-ADT-105B",
+  "id": 40,
+  "code": "DA-DDT-116",
   "name": "DT COCONUT MILK SOURSOP 12/16.6 OZ",
   "upc": "797495905063",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 40,
-  "code": "DR-ADT-106B",
+  "id": 41,
+  "code": "DA-DDT-117",
   "name": "DT COCONUT MILK PINA COLADA 12/16.6 OZ",
   "upc": "797495905148",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 41,
-  "code": "DR-ADT-109B",
+  "id": 42,
+  "code": "DA-DDT-118",
   "name": "DT COCONUT MILK PEACH 12/16.6 OZ",
   "upc": "797495905094",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 42,
-  "code": "DR-ADT-110B",
+  "id": 43,
+  "code": "DA-DDT-119",
   "name": "DT COCONUT MILK MOCHA 12/16.6 OZ",
   "upc": "797495905131",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 43,
-  "code": "DR-ADT-113B",
+  "id": 44,
+  "code": "DA-DDT-120",
   "name": "DT COCONUT MILK ORIGINAL SMALL 24/9.8 OZ",
   "upc": "797495905209",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 44,
-  "code": "DR-ADT-114B",
+  "id": 45,
+  "code": "DA-DDT-121",
   "name": "DT COCONUT MILK STRAWBERRY SMALL 24/9.8 OZ",
   "upc": "797495905216",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 45,
-  "code": "DR-ADT-115B",
+  "id": 46,
+  "code": "DA-DDT-122",
   "name": "DT COCONUT MILK MANGO SMALL 24/9.8 OZ",
   "upc": "797495905223",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 46,
-  "code": "DR-ADT-117B",
+  "id": 47,
+  "code": "DA-DDT-123",
   "name": "DT COCONUT MILK PINA COLADA SMALL 24/9.8 OZ",
   "upc": "797495905346",
   "price": 31.99,
   "category": "DRINKS"
  },
  {
-  "id": 47,
-  "code": "DR-AMP-102B",
-  "name": "AMP 365 ENERGY DRINK ORIGINAL (SILVER) 12/600 ML",
-  "upc": "740100598087",
-  "price": 22.99,
-  "category": "ENERGY DRINKS"
- },
- {
   "id": 48,
-  "code": "DR-AMP-103B",
-  "name": "AMP 365 ENERGY DRINK GOLD 12/600 ML",
-  "upc": "740100590686",
-  "price": 22.99,
-  "category": "ENERGY DRINKS"
- },
- {
-  "id": 49,
-  "code": "DR-AMP-104B",
-  "name": "AMP 365 ENERGY DRINK (FORTE) ROJA 12/600 ML",
-  "upc": "740100591052",
-  "price": 22.99,
-  "category": "ENERGY DRINKS"
- },
- {
-  "id": 50,
-  "code": "DR-AMP-105B",
-  "name": "AMP 365 ENERGY DRINK RECARGADO - BLUE 12/600 ML",
-  "upc": "742160110585",
-  "price": 22.99,
-  "category": "ENERGY DRINKS"
- },
- {
-  "id": 51,
-  "code": "DR-COLA-101B",
-  "name": "COCA COLA 12/1.25 LT",
-  "upc": "850003134031",
-  "price": 34.75,
-  "category": "SODAS"
- },
- {
-  "id": 52,
-  "code": "DR-COLA-105B",
-  "name": "COCA COLA MINI 24/192 ML",
-  "upc": "751055304745",
-  "price": 29.99,
-  "category": "SODAS"
- },
- {
-  "id": 53,
-  "code": "DR-COLA-112B",
-  "name": "COCA COLA 24/12 OZ",
-  "upc": "422110106749",
-  "price": 34.75,
-  "category": "SODAS"
- },
- {
-  "id": 54,
-  "code": "DR-COLA-114B",
-  "name": "COCA COLA 6/3 LT",
-  "upc": "742211010055",
-  "price": 28.99,
-  "category": "SODAS"
- },
- {
-  "id": 55,
-  "code": "DR-GRJ-105B",
+  "code": "DA-DLG-124",
   "name": "DLG JUGO DE NARANJA TETRAPACK 24/16.9 OZ",
   "upc": "740618900295",
   "price": 43.99,
   "category": "DRINKS"
  },
  {
-  "id": 56,
-  "code": "DR-GRJ-107B",
+  "id": 49,
+  "code": "DA-DLG-125",
   "name": "DLG JUGO DE NARANJA TETRAPACK 12/33 OZ",
   "upc": "740618900855",
   "price": 43.99,
   "category": "DRINKS"
  },
  {
+  "id": 50,
+  "code": "DR-DDT-126",
+  "name": "DELICIAS TRADICIONALES JUGO NARANJA 6/2 LT",
+  "upc": "797496905810",
+  "price": 22.5,
+  "category": "DRINKS"
+ },
+ {
+  "id": 51,
+  "code": "DA-QAN-101",
+  "name": "JUGO QUANTY ASSORTED 6Pack/8OZ",
+  "upc": "611594000323",
+  "price": 3.49,
+  "category": "DRINKS"
+ },
+ {
+  "id": 52,
+  "code": "DA-MRN-101",
+  "name": "MARINERO  PICANTE 24/250 ML",
+  "upc": "815372008280",
+  "price": 31.75,
+  "category": "DRINKS"
+ },
+ {
+  "id": 53,
+  "code": "DA-MRN-102",
+  "name": "MARINERO  REGULAR 24/250 ML",
+  "upc": "815372008110",
+  "price": 31.75,
+  "category": "DRINKS"
+ },
+ {
+  "id": 54,
+  "code": "DA-AMP-101",
+  "name": "AMP 365 ENERGY DRINK ORIGINAL (SILVER) 12/600 ML",
+  "upc": "740100598087",
+  "price": 22.99,
+  "category": "ENERGY DRINKS"
+ },
+ {
+  "id": 55,
+  "code": "DA-AMP-102",
+  "name": "AMP 365 ENERGY DRINK (FORTE) ROJA 12/600 ML",
+  "upc": "740100591052",
+  "price": 22.99,
+  "category": "ENERGY DRINKS"
+ },
+ {
+  "id": 56,
+  "code": "DA-AMP-103",
+  "name": "AMP 365 ENERGY DRINK RECARGADO - BLUE 12/600 ML",
+  "upc": "742160110585",
+  "price": 22.99,
+  "category": "ENERGY DRINKS"
+ },
+ {
   "id": 57,
-  "code": "DR-RAP-101B",
+  "code": "DA-RAP-101",
   "name": "RAPTOR ENERGY DRINK PET 12/600 ML.",
   "upc": "740100070772",
   "price": 18.75,
@@ -457,7 +457,7 @@
  },
  {
   "id": 58,
-  "code": "DR-RAP-102B",
+  "code": "DA-RAP-102",
   "name": "RAPTOR ENERGY DRINK LATA 24/16 OZ",
   "upc": "740618900374",
   "price": 38.95,
@@ -465,746 +465,810 @@
  },
  {
   "id": 59,
-  "code": "DR-MRN-101B",
-  "name": "MARINERO  PICANTE 24/250 ML",
-  "upc": "815372008280",
-  "price": 31.75,
-  "category": "DRINKS"
- },
- {
-  "id": 60,
-  "code": "DR-MRN-102B",
-  "name": "MARINERO  REGULAR 24/250 ML",
-  "upc": "815372008110",
-  "price": 31.75,
-  "category": "DRINKS"
- },
- {
-  "id": 61,
-  "code": "CA-VAR-136B",
-  "name": "MARGARINA CLOVER 24/400 GR",
-  "upc": "742100160201",
-  "price": 52.0,
-  "category": "GROCERY"
- },
- {
-  "id": 62,
-  "code": "CA-LAK-120B",
-  "name": "LAKY SOPA DE GALLINA 12/64GR",
-  "upc": "740400180038",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 63,
-  "code": "CA-LAK-106B",
-  "name": "LAKY SOPA DE POLLO 12/64GR",
-  "upc": "740400180022",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 64,
-  "code": "CA-LAK-102B",
-  "name": "LAKY SOPA DE JAIBA 12/64GR",
-  "upc": "740400180055",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 65,
-  "code": "CA-LAK-103B",
-  "name": "LAKY SOPA DE MARISCOS 12/64 GR",
-  "upc": "740400180037",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 66,
-  "code": "CA-LAK-104B",
-  "name": "LAKY SOPA DE RES 12/64GR",
-  "upc": "740400180003",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 67,
-  "code": "CA-LAK-105B",
-  "name": "LAKY SOPA DE CAMARON PICANTE 12/64 GR",
-  "upc": "740400180062",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 68,
-  "code": "CA-LAK-107B",
-  "name": "LAKY SOPA DE CAMARON 12/64 GR",
-  "upc": "740400180002",
-  "price": 15.99,
-  "category": "GROCERY"
- },
- {
-  "id": 69,
-  "code": "DR-QAN-101",
-  "name": "JUGO QUANTY ASSORTED 6Pack/8OZ",
-  "upc": "611594000323",
-  "price": 3.49,
-  "category": "DRINKS"
- },
- {
-  "id": 70,
-  "code": "CA-LID-115B",
-  "name": "LIDO MARIA 20/135GR",
-  "upc": "797936000470",
-  "price": 14.99,
-  "category": "BAKERY"
- },
- {
-  "id": 71,
-  "code": "CA-ZAM-102B",
-  "name": "ZAMBO ORIGINAL CASERO 24/140 GR",
-  "upc": "750894602780",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 72,
-  "code": "CA-ZAM-103B",
-  "name": "ZAMBO PICOSOS 24/140 GR",
-  "upc": "750894600267",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 73,
-  "code": "CA-ZAM-104B",
-  "name": "ZAMBO SALSA VERDE 24/140 GR",
-  "upc": "750894600717",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 74,
-  "code": "CA-ZAM-107B",
-  "name": "ZAMBO MADURO 24/180 GR",
-  "upc": "750894607181",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 75,
-  "code": "CA-ZAM-110B",
-  "name": "ZAMBO CEVICHE 24/138 GR",
-  "upc": "750894610822",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 76,
-  "code": "CA-ZAM-106B",
-  "name": "ZAMBO RANCHITAS NACHO QUESO 24/150 GR",
-  "upc": "750894602421",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 77,
-  "code": "CA-ZAM-108B",
-  "name": "TAQUERITOS CHILE 24/180 GR",
-  "upc": "750894609505",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 78,
-  "code": "CA-ZAM-109B",
-  "name": "TAQUERITOS QUESO FUSION 24/130 GR",
-  "upc": "750894609499",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 79,
-  "code": "CA-ZAM-114B",
-  "name": "RANCHITA TOREADO 24/130 GR",
-  "upc": "750894613182",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 80,
-  "code": "CA-ZAM-117B",
-  "name": "TAQUERITOS DRAGON DE HIELO 24/180 GR",
-  "upc": "750894613243",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 81,
-  "code": "CA-ZAM-118B",
-  "name": "TAQUERITOS DRAGON DE FUEGO 24/180 GR",
-  "upc": "750894613212",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 82,
-  "code": "SN-ADT-133B",
-  "name": "DT PLATAIN CHILE Y LIMON 12/18 OZ",
-  "upc": "797495907098",
-  "price": 5.79,
-  "category": "SNACKS"
- },
- {
-  "id": 83,
-  "code": "SN-ADT-132B",
-  "name": "DT PLANTAIN MADURITO 12/18 OZ",
-  "upc": "797495907074",
-  "price": 5.79,
-  "category": "SNACKS"
- },
- {
-  "id": 84,
-  "code": "SN-ADT-131B",
-  "name": "DT PLANTAIN SALADO 12/18 OZ",
-  "upc": "797495907050",
-  "price": 5.79,
-  "category": "SNACKS"
- },
- {
-  "id": 85,
-  "code": "SN-ADT-123B",
-  "name": "DT PLANTAIN CHILE Y LIMON 24/5.5 OZ",
-  "upc": "797495907081",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 86,
-  "code": "SN-ADT-122B",
-  "name": "DT PLANTAIN MADURITO 24/5.5 OZ",
-  "upc": "797495907067",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 87,
-  "code": "SN-ADT-121B",
-  "name": "DT PLANTAIN SALADO 24/5.5 OZ",
-  "upc": "797495907043",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 88,
-  "code": "SN-FTL-101B",
-  "name": "CRUJITO QUESO 17/120GR",
-  "upc": "721282407645",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 89,
-  "code": "SN-FTL-110B",
-  "name": "SCHEETOS FLAMING HOT 36/120 GR",
-  "upc": "721282405573",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 90,
-  "code": "SN-FTL-111B",
-  "name": "CHEETO CRUNCHY EXTRA QUESO 36/120GR",
-  "upc": "721282301059",
-  "price": 2.7,
-  "category": "SNACKS"
- },
- {
-  "id": 91,
-  "code": "SN-FTS-103B",
-  "name": "FRIT-OS NACHO BARBACOA 10/325GR",
-  "upc": "721282407034",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 92,
-  "code": "DR-ELE-101",
+  "code": "DA-ELE-101",
   "name": "ELECTROLIT FRESA 12/625 ML",
   "upc": "750112510426",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 93,
-  "code": "DR-ELE-102",
+  "id": 60,
+  "code": "DA-ELE-102",
   "name": "ELECTROLIT LIMA LIMON 12/625 ML",
   "upc": "750112511856",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 94,
-  "code": "DR-ELE-104",
+  "id": 61,
+  "code": "DA-ELE-103",
   "name": "ELECTROLIT MORA AZUL 12/625 ML",
   "upc": "750112517479",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 95,
-  "code": "DR-ELE-106",
+  "id": 62,
+  "code": "DA-ELE-104",
   "name": "ELECTROLIT HORCHATA 12/625 ML",
   "upc": "750112518713",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 96,
-  "code": "DR-ELE-107",
+  "id": 63,
+  "code": "DA-ELE-105",
   "name": "ELECTROLIT FRESA/KIWI 12/625 ML",
   "upc": "750112514922",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 97,
-  "code": "DR-ELE-109",
+  "id": 64,
+  "code": "DA-ELE-106",
   "name": "ELECTROLIT MANZANA 12/625 ML",
   "upc": "750112510434",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 98,
-  "code": "DR-ELE-110",
+  "id": 65,
+  "code": "DA-ELE-107",
   "name": "ELECTROLIT PINA 12/625 ML",
   "upc": "750112510358",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 99,
-  "code": "DR-ELE-112",
+  "id": 66,
+  "code": "DA-ELE-108",
   "name": "ELECTROLIT UVA 12/625 ML",
   "upc": "750112514485",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 100,
-  "code": "DR-ELE",
+  "id": 67,
+  "code": "DA-ELE-109",
   "name": "ELECTROLIT FRUIT PUNCH 12/625 ML",
   "upc": "750112513122",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 101,
-  "code": "DR-ELE",
+  "id": 68,
+  "code": "DA-ELE-110",
   "name": "ELECTROLIT NARANJA 12/625 ML",
   "upc": "750112510468",
   "price": 29.99,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 102,
-  "code": "SN-SAB-105",
-  "name": "CHEETO BOLITAS GRANDE 1/24",
-  "upc": "750047804416",
-  "price": 2.89,
-  "category": "SNACKS"
+  "id": 69,
+  "code": "DA-ELE-111",
+  "name": "ELECTROLIT GUAVA 12/625 ML",
+  "upc": "750112518717",
+  "price": 30.99,
+  "category": "ENERGY DRINKS"
  },
  {
-  "id": 103,
-  "code": "SN-SAB-106",
-  "name": "CHEETOS FLAMIN HOT GRANDE 1/20",
-  "upc": "750101113093",
-  "price": 2.89,
-  "category": "SNACKS"
+  "id": 70,
+  "code": "DA-ELE-112",
+  "name": "ELECTROLIT COCO 12/625 ML",
+  "upc": "750111251490",
+  "price": 31.99,
+  "category": "ENERGY DRINKS"
  },
  {
-  "id": 104,
-  "code": "SN-SAB-107",
-  "name": "CHEETOS POFFS GRANDE 1/24",
-  "upc": "750047804410",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 105,
-  "code": "SN-SAB-108",
-  "name": "CHEETOS TORCIDITOS GRANDE 1/20",
-  "upc": "750047804427",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 106,
-  "code": "SN-SAB-111",
-  "name": "CHEETOS COLMILLOS GRANDE 1/20",
-  "upc": "750047804416",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 107,
-  "code": "SN-SAB-109",
-  "name": "CHURRUMAIS FLAMIN HOT GRANDE 1/20",
-  "upc": "750047804228",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 108,
-  "code": "SN-SAB-129",
-  "name": "CHURRUMAIS LIMON GRANDE 1/20",
-  "upc": "750047800255",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 109,
-  "code": "SN-SAB-112",
-  "name": "CRUJITOS GRANDE 1/24",
-  "upc": "750101113104",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 110,
-  "code": "SN-SAB-113",
-  "name": "DORITOS NACHOS GRANDE 1/24",
-  "upc": "721282300397",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 111,
-  "code": "SN-SAB-115",
-  "name": "FRITOS CHORIZO CHIPOTLE GRANDE 1/20",
-  "upc": "750101115106",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 112,
-  "code": "SN-SAB-116",
-  "name": "SABRITAS PAKE-TAXO BOTANERO GRANDE 270 GR 1/12",
-  "upc": "750101115486",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 113,
-  "code": "SN-SAB-117",
-  "name": "SABRITAS PAKE-TAXO FLAMIN HOT GRANDE 1/12",
-  "upc": "750101115022",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 114,
-  "code": "SN-SAB-118",
-  "name": "SABRITAS PAKE-TAXO MEZCLADITO GRANDE 1/12",
-  "upc": "750101113502",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 115,
-  "code": "SN-SAB-119",
-  "name": "SABRITAS PAKE-TAXO QUESO AZUL GRANDE 1/12",
-  "upc": "750047804420",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 116,
-  "code": "SN-SAB-142",
-  "name": "SABRITAS PAKE-TAXO DARK FAMILIAR 1/13",
-  "upc": "750047804440",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 117,
-  "code": "SN-SAB-124",
-  "name": "SABRITAS SABRITONES GRANDE 1/10",
-  "upc": "750101115108",
-  "price": 4.09,
-  "category": "SNACKS"
- },
- {
-  "id": 118,
-  "code": "SN-SAB-120",
-  "name": "SABRITAS PAPAS ADOBADAS GRANDE 1/30",
-  "upc": "750101116766",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 119,
-  "code": "SN-SAB-122",
-  "name": "SABRITAS RANCHERITO GRANDE 1/24",
-  "upc": "750101111451",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 120,
-  "code": "SN-SAB-123",
-  "name": "SABRITAS RUFFLES QUESO GRANDE 1/30",
-  "upc": "750101116767",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 121,
-  "code": "SN-SAB-126",
-  "name": "TOSTITOS SALSA VERDE GRAN 1/22",
-  "upc": "750101113086",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 122,
-  "code": "SN-SAB-133",
-  "name": "TOSTITOS FLAMIN HOT GRANDE 1/22",
-  "upc": "750101113087",
-  "price": 2.89,
-  "category": "SNACKS"
- },
- {
-  "id": 123,
-  "code": "",
-  "name": "MAGGI SOPA CRIOLLA/RES 10/DISPLAY 58 G",
-  "upc": "088169007511",
-  "price": 10.99,
-  "category": "GROCERY"
- },
- {
-  "id": 124,
-  "code": "",
-  "name": "MAGGI SOPA POLLO/CARACOL 10/DISPLAY 58 G",
-  "upc": "288000513108",
-  "price": 10.99,
-  "category": "GROCERY"
- },
- {
-  "id": 125,
-  "code": "",
-  "name": "MAGGI SOPA POLLO/FIDEOS 10/DISPLAY 58 G",
-  "upc": "761303539620",
-  "price": 10.99,
-  "category": "GROCERY"
- },
- {
-  "id": 126,
-  "code": "",
-  "name": "Sabritas Receta Crujiente Flamin Hot",
-  "upc": "750047804595",
-  "price": 2.89,
-  "category": "CHIPS"
- },
- {
-  "id": 127,
-  "code": "",
-  "name": "Sabritas Adobadas",
-  "upc": "750101116766",
-  "price": 2.89,
-  "category": "CHIPS"
- },
- {
-  "id": 128,
-  "code": "",
-  "name": "Cheetos Horneados 80gr",
-  "upc": "721282301042",
-  "price": 2.89,
-  "category": "CHIPS"
- },
- {
-  "id": 129,
-  "code": "",
+  "id": 71,
+  "code": "DA-ADR-113",
   "name": "Adrenaline Rush Lata 24u/10oz",
   "upc": "739510005130",
   "price": 49.95,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 130,
-  "code": "",
+  "id": 72,
+  "code": "DA-ADR-114",
   "name": "Adrenaline Lata 24u/16oz",
   "upc": "739510005130",
   "price": 52.0,
   "category": "ENERGY DRINKS"
  },
  {
-  "id": 131,
-  "code": "",
-  "name": "Malher Chicken Flavor Bouillon",
-  "upc": "896740204460",
-  "price": 66.5,
-  "category": "MISC"
+  "id": 73,
+  "code": "DA-VIV-115",
+  "name": "JUGO VIVE 100 VERDE 24/600ml",
+  "upc": "770235492950",
+  "price": 32.95,
+  "category": "ENERGY DRINKS"
  },
  {
-  "id": 132,
-  "code": "",
-  "name": "Tiky Pet Piña 12/20oz",
-  "upc": "740100230311",
-  "price": 19.95,
-  "category": "SODAS"
- },
- {
-  "id": 133,
-  "code": "",
-  "name": "Tiky Piña  6/3L",
-  "upc": "740100230320",
-  "price": 28.95,
-  "category": "SODAS"
- },
- {
-  "id": 134,
-  "code": "",
-  "name": "Viloe Jelly Pop 40g 12pcs 6 bags",
-  "upc": "108100068728",
-  "price": 34.99,
-  "category": "MISC"
- },
- {
-  "id": 135,
-  "code": "",
-  "name": "Velas Plain DAKAR White",
-  "upc": "900000000001",
-  "price": 29.99,
-  "category": "MISC"
- },
- {
-  "id": 136,
-  "code": "",
-  "name": "Velas Plain DAKAR Red",
-  "upc": "900000000002",
-  "price": 29.99,
-  "category": "MISC"
- },
- {
-  "id": 137,
-  "code": "",
-  "name": "Velas Plain DAKAR Green",
-  "upc": "900000000003",
-  "price": 29.99,
-  "category": "MISC"
- },
- {
-  "id": 138,
-  "code": "",
-  "name": "Velas Plain DAKAR 7 colors",
-  "upc": "900000000004",
-  "price": 29.99,
-  "category": "MISC"
- },
- {
-  "id": 139,
-  "code": "",
-  "name": "PAN DT SALPORA DE ARROZ",
-  "upc": "797495901294",
-  "price": 0.0,
-  "category": "BAKERY"
- },
- {
-  "id": 140,
-  "code": "",
-  "name": "PAN DT SALPORA COCO",
-  "upc": "797495901300",
-  "price": 0.0,
-  "category": "BAKERY"
- },
- {
-  "id": 141,
-  "code": "",
-  "name": "PAN DT POLVORONES MIX",
-  "upc": "797495904608",
-  "price": 7.0,
-  "category": "BAKERY"
- },
- {
-  "id": 142,
-  "code": "DR-ADT-134B",
-  "name": "DELICIAS TRADICIONALES JUGO NARANJA 6/2 LT",
-  "upc": "797496905810",
-  "price": 22.5,
-  "category": "DRINKS"
- },
- {
-  "id": 143,
-  "code": "CA-VAR-113B",
-  "name": "MANTECA CLOVER 50/14 OZ",
-  "upc": "7421001601028",
-  "price": 1.99,
+  "id": 74,
+  "code": "DA-FDT-101",
+  "name": "FRIJOL ROJO DE SEDA PREMIUM DT  6/58OZ",
+  "upc": "797495904028",
+  "price": 36.99,
   "category": "GROCERY"
  },
  {
-  "id": 144,
-  "code": "CA-MZL-105",
-  "name": "MAZOLA MANTECA 50/14 OZ",
-  "upc": "750894620678",
-  "price": 1.99,
+  "id": 75,
+  "code": "DA-NAT-101",
+  "name": "FRIJOL NATURAS 380 GR",
+  "upc": "850022820860",
+  "price": 2.49,
   "category": "GROCERY"
  },
  {
-  "id": 145,
-  "code": "CA-NAT-112",
+  "id": 76,
+  "code": "DA-NAT-102",
+  "name": "FRIJOL NATURAS 750 GR",
+  "upc": "741100034508",
+  "price": 2.75,
+  "category": "GROCERY"
+ },
+ {
+  "id": 77,
+  "code": "DA-NAT-103",
+  "name": "NATURAS KETCHUP 24/385GR",
+  "upc": "7411000329726",
+  "price": 2.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 78,
+  "code": "DA-NAT-104",
   "name": "NATURAS KETCHUP DOY PACK 24/385GR",
   "upc": "7411000329702",
   "price": 3.19,
   "category": "GROCERY"
  },
  {
-  "id": 146,
-  "code": "SA-DJL-101",
-  "name": "DON JULIO SALSA PICANTE 24/15.60 OZ",
-  "upc": "714258017320",
-  "price": 28.99,
+  "id": 79,
+  "code": "DA-NAT-105",
+  "name": "NATURAS SALSA SOFRITO 24U",
+  "upc": "",
+  "price": 36.99,
   "category": "GROCERY"
  },
  {
-  "id": 147,
-  "code": "CA-ZAM-101B",
-  "name": "ANILLITO DE PAPA 24/140 GR",
-  "upc": "750894606627",
+  "id": 80,
+  "code": "DA-LAK-101",
+  "name": "LAKY SOPA DE GALLINA 12/64GR",
+  "upc": "740400180038",
+  "price": 15.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 81,
+  "code": "DA-LAK-102",
+  "name": "LAKY SOPA DE POLLO 12/64GR",
+  "upc": "740400180022",
+  "price": 15.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 82,
+  "code": "DA-LAK-103",
+  "name": "LAKY SOPA DE MARISCOS 12/64 GR",
+  "upc": "740400180037",
+  "price": 15.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 83,
+  "code": "DA-LAK-104",
+  "name": "LAKY SOPA DE RES 12/64GR",
+  "upc": "740400180003",
+  "price": 15.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 84,
+  "code": "DA-LAK-105",
+  "name": "LAKY SOPA DE CAMARON 12/64 GR",
+  "upc": "740400180002",
+  "price": 15.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 85,
+  "code": "DA-MAG-101",
+  "name": "MAGGI SOPA CRIOLLA/RES 10/DISPLAY 58 G",
+  "upc": "088169007511",
+  "price": 10.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 86,
+  "code": "DA-MAG-102",
+  "name": "MAGGI SOPA POLLO/CARACOL 10/DISPLAY 58 G",
+  "upc": "288000513108",
+  "price": 10.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 87,
+  "code": "DA-MAG-103",
+  "name": "MAGGI SOPA POLLO/FIDEOS 10/DISPLAY 58 G",
+  "upc": "761303539620",
+  "price": 10.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 88,
+  "code": "DA-CLO-101",
+  "name": "MANTECA CLOVER 50/14 OZ",
+  "upc": "7421001601028",
+  "price": 1.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 89,
+  "code": "DA-CLO-102",
+  "name": "MARGARINA CLOVER 24/400 GR",
+  "upc": "742100160201",
+  "price": 2.16,
+  "category": "GROCERY"
+ },
+ {
+  "id": 90,
+  "code": "DA-MZL-105",
+  "name": "MAZOLA MANTECA 50/14 OZ",
+  "upc": "750894620678",
+  "price": 1.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 91,
+  "code": "DA-MZL-106",
+  "name": "MAZOLA MARGARINA 24/400GR",
+  "upc": "750894621337",
+  "price": 2.16,
+  "category": "GROCERY"
+ },
+ {
+  "id": 92,
+  "code": "DA-DJL-101",
+  "name": "DON JULIO SALSA PICANTE 24/15.60 OZ",
+  "upc": "714258017320",
+  "price": 57.6,
+  "category": "GROCERY"
+ },
+ {
+  "id": 93,
+  "code": "DA-MAL-101",
+  "name": "Malher Chicken Flavor Bouillon",
+  "upc": "896740204460",
+  "price": 66.5,
+  "category": "GROCERY"
+ },
+ {
+  "id": 94,
+  "code": "DA-QUA-101",
+  "name": "AVENA QUAKER MOLIDA 24",
+  "upc": "803275035005",
+  "price": 2.99,
+  "category": "GROCERY"
+ },
+ {
+  "id": 95,
+  "code": "DA-QUA-102",
+  "name": "AVENA QUAKER MOSH 24",
+  "upc": "803275035791",
+  "price": 2.49,
+  "category": "GROCERY"
+ },
+ {
+  "id": 96,
+  "code": "DA-MIS-101",
+  "name": "Viloe Jelly Pop 40g 12pcs 6 bags",
+  "upc": "108100068728",
+  "price": 34.99,
+  "category": "MISC"
+ },
+ {
+  "id": 97,
+  "code": "DA-MIS-102",
+  "name": "Velas Plain DAKAR White",
+  "upc": "900000000001",
+  "price": 29.99,
+  "category": "MISC"
+ },
+ {
+  "id": 98,
+  "code": "DA-MIS-103",
+  "name": "Velas Plain DAKAR Red",
+  "upc": "900000000002",
+  "price": 29.99,
+  "category": "MISC"
+ },
+ {
+  "id": 99,
+  "code": "DA-MIS-104",
+  "name": "Velas Plain DAKAR Green",
+  "upc": "900000000003",
+  "price": 29.99,
+  "category": "MISC"
+ },
+ {
+  "id": 100,
+  "code": "DA-MIS-105",
+  "name": "Velas Plain DAKAR 7 colors",
+  "upc": "900000000004",
+  "price": 29.99,
+  "category": "MISC"
+ },
+ {
+  "id": 101,
+  "code": "DA-SAB-101",
+  "name": "SABRITAS PAKE-TAXO BOTANERO GRANDE 270 GR 1/12",
+  "upc": "750101115486",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 102,
+  "code": "DA-SAB-102",
+  "name": "SABRITAS PAKE-TAXO FLAMIN HOT GRANDE 1/12",
+  "upc": "750101115022",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 103,
+  "code": "DA-SAB-103",
+  "name": "SABRITAS PAKE-TAXO MEZCLADITO GRANDE 1/12",
+  "upc": "750101113502",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 104,
+  "code": "DA-SAB-104",
+  "name": "SABRITAS PAKE-TAXO QUESO AZUL GRANDE 1/12",
+  "upc": "750047804420",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 105,
+  "code": "DA-SAB-105",
+  "name": "SABRITAS PAKE-TAXO DARK FAMILIAR 1/13",
+  "upc": "750047804440",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 106,
+  "code": "DA-SAB-106",
+  "name": "SABRITAS SABRITONES GRANDE 1/10",
+  "upc": "750101115108",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 107,
+  "code": "DA-SAB-107",
+  "name": "CHEETOS FLAMING HOT 36/120 GR",
+  "upc": "721282405573",
   "price": 2.7,
   "category": "SNACKS"
  },
  {
-  "id": 148,
-  "code": "CA-ZAM-105B",
-  "name": "RANCHITAS PICOSAS 24/150 GR",
-  "upc": "750894606399",
+  "id": 108,
+  "code": "DA-SAB-108",
+  "name": "CHEETO CRUNCHY EXTRA QUESO 36/120GR",
+  "upc": "721282301059",
   "price": 2.7,
   "category": "SNACKS"
  },
  {
-  "id": 149,
-  "code": "CA-ZAM-113B",
-  "name": "YUQUITA CHILE TOREADO 24/130 GR",
-  "upc": "750894611966",
+  "id": 109,
+  "code": "DA-SAB-109",
+  "name": "CHEETO BOLITAS GRANDE 1/24",
+  "upc": "750047804416",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 110,
+  "code": "DA-SAB-110",
+  "name": "CHEETOS TORCIDITOS GRANDE 1/20",
+  "upc": "750047804427",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 111,
+  "code": "DA-SAB-111",
+  "name": "CHEETOS FLAMIN HOT GRANDE 1/20",
+  "upc": "750101113093",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 112,
+  "code": "DA-SAB-112",
+  "name": "CHEETOS POFFS GRANDE 1/24",
+  "upc": "750047804410",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 113,
+  "code": "DA-SAB-113",
+  "name": "CHEETOS COLMILLOS GRANDE 1/20",
+  "upc": "750047804416",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 114,
+  "code": "DA-SAB-114",
+  "name": "CHEETOS HORNEADOS 80gr",
+  "upc": "721282301042",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 115,
+  "code": "DA-SAB-115",
+  "name": "TOSTITOS FLAMIN HOT GRANDE 1/22",
+  "upc": "750101113087",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 116,
+  "code": "DA-SAB-116",
+  "name": "TOSTITOS SALSA VERDE GRAN 1/22",
+  "upc": "750101113086",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 117,
+  "code": "DA-SAB-117",
+  "name": "SABRITAS RUFFLES QUESO GRANDE 1/30",
+  "upc": "750101116767",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 118,
+  "code": "DA-SAB-118",
+  "name": "SABRITAS RANCHERITO GRANDE 1/24",
+  "upc": "750101111451",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 119,
+  "code": "DA-SAB-119",
+  "name": "DORITOS NACHOS GRANDE 1/24",
+  "upc": "721282300397",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 120,
+  "code": "DA-SAB-120",
+  "name": "CRUJITOS GRANDE 1/24",
+  "upc": "750101113104",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 121,
+  "code": "DA-SAB-121",
+  "name": "CRUJITO QUESO 17/120GR",
+  "upc": "721282407645",
   "price": 2.7,
   "category": "SNACKS"
  },
  {
-  "id": 150,
-  "code": "SN-FTL-106B",
+  "id": 122,
+  "code": "DA-SAB-122",
+  "name": "CHURRUMAIS FLAMIN HOT GRANDE 1/20",
+  "upc": "750047804228",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 123,
+  "code": "DA-SAB-123",
+  "name": "CHURRUMAIS LIMON GRANDE 1/20",
+  "upc": "750047800255",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 124,
+  "code": "DA-SAB-124",
   "name": "DORITO NACHO ATREVIDO 18/150GR",
   "upc": "721282300397",
   "price": 2.99,
   "category": "SNACKS"
  },
  {
+  "id": 125,
+  "code": "DA-SAB-125",
+  "name": "Sabritas Receta Crujiente Flamin Hot",
+  "upc": "750047804595",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 126,
+  "code": "DA-SAB-126",
+  "name": "Sabritas Adobadas",
+  "upc": "750101116766",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 127,
+  "code": "DA-SAB-127",
+  "name": "FRIT-OS NACHO BARBACOA 10/325GR",
+  "upc": "721282407034",
+  "price": 4.09,
+  "category": "SNACKS"
+ },
+ {
+  "id": 128,
+  "code": "DA-SAB-128",
+  "name": "FRITOS CHORIZO CHIPOTLE GRANDE 1/20",
+  "upc": "750101115106",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 129,
+  "code": "DA-BAR-101",
+  "name": "BARCEL RUNNERS CHILE LIMON 34/200GR",
+  "upc": "750103042126",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 130,
+  "code": "DA-ZAM-101",
+  "name": "ZAMBO PICOSOS 24/140 GR",
+  "upc": "750894600267",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 131,
+  "code": "DA-ZAM-102",
+  "name": "ZAMBO SALSA VERDE 24/140 GR",
+  "upc": "750894600717",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 132,
+  "code": "DA-ZAM-103",
+  "name": "ZAMBO ORIGINAL CASERO 24/140 GR",
+  "upc": "750894602780",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 133,
+  "code": "DA-ZAM-104",
+  "name": "ZAMBO MADURO 24/180 GR",
+  "upc": "750894607181",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 134,
+  "code": "DA-ZAM-105",
+  "name": "ZAMBO CEVICHE 24/138 GR",
+  "upc": "750894610822",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 135,
+  "code": "DA-ZAM-106",
+  "name": "ZAMBO RANCHITAS NACHO QUESO 24/150 GR",
+  "upc": "750894602421",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 136,
+  "code": "DA-ZAM-107",
+  "name": "RANCHITAS PICOSAS 24/150 GR",
+  "upc": "750894606399",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 137,
+  "code": "DA-ZAM-108",
+  "name": "ANILLITO DE PAPA 24/140 GR",
+  "upc": "750894606627",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 138,
+  "code": "DA-ZAM-109",
+  "name": "YUQUITA CHILE TOREADO 24/130 GR",
+  "upc": "750894611966",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 139,
+  "code": "DA-ZAM-110",
+  "name": "YUQUITA ORIGINAL 24/130 GR",
+  "upc": "750894611973",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 140,
+  "code": "DA-ZAM-111",
+  "name": "TAQUERITOS CHILE 24/180 GR",
+  "upc": "750894609505",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 141,
+  "code": "DA-ZAM-112",
+  "name": "TAQUERITOS QUESO FUSION 24/130 GR",
+  "upc": "750894609499",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 142,
+  "code": "DA-ZAM-113",
+  "name": "TAQUERITOS DRAGON DE HIELO 24/180 GR",
+  "upc": "750894613243",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 143,
+  "code": "DA-ZAM-114",
+  "name": "TAQUERITOS DRAGON DE FUEGO 24/180 GR",
+  "upc": "750894613212",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 144,
+  "code": "DA-PDT-121",
+  "name": "DT PLANTAIN SALADO 24/5.5 OZ",
+  "upc": "797495907043",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 145,
+  "code": "DA-PDT-122",
+  "name": "DT PLANTAIN MADURITO 24/5.5 OZ",
+  "upc": "797495907067",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 146,
+  "code": "DA-PDT-123",
+  "name": "DT PLANTAIN CHILE Y LIMON 24/5.5 OZ",
+  "upc": "797495907081",
+  "price": 2.7,
+  "category": "SNACKS"
+ },
+ {
+  "id": 147,
+  "code": "DA-PDT-124",
+  "name": "DT PLANTAIN SALADO 12/18 OZ",
+  "upc": "797495907050",
+  "price": 5.79,
+  "category": "SNACKS"
+ },
+ {
+  "id": 148,
+  "code": "DA-PDT-125",
+  "name": "DT PLANTAIN MADURITO 12/18 OZ",
+  "upc": "797495907074",
+  "price": 5.79,
+  "category": "SNACKS"
+ },
+ {
+  "id": 149,
+  "code": "DA-PDT-126",
+  "name": "DT PLATAIN CHILE Y LIMON 12/18 OZ",
+  "upc": "797495907098",
+  "price": 5.79,
+  "category": "SNACKS"
+ },
+ {
+  "id": 150,
+  "code": "DA-SOD-101",
+  "name": "COCA COLA MINI 24/192 ML",
+  "upc": "751055304745",
+  "price": 29.99,
+  "category": "SODAS"
+ },
+ {
   "id": 151,
-  "code": "",
-  "name": "NATURAS KETCHUP 24/385GR",
-  "upc": "7411000329726",
-  "price": 4.99,
-  "category": "GROCERY"
+  "code": "DA-SOD-102",
+  "name": "COCA COLA 24/12 OZ",
+  "upc": "422110106749",
+  "price": 34.75,
+  "category": "SODAS"
+ },
+ {
+  "id": 152,
+  "code": "DA-SOD-103",
+  "name": "COCA COLA 12/1.25 LT",
+  "upc": "850003134031",
+  "price": 34.75,
+  "category": "SODAS"
+ },
+ {
+  "id": 153,
+  "code": "DA-SOD-104",
+  "name": "COCA COLA 6/3 LT",
+  "upc": "742211010055",
+  "price": 28.99,
+  "category": "SODAS"
+ },
+ {
+  "id": 154,
+  "code": "DA-SOD-105",
+  "name": "TIKY Pet Piña 12/20oz",
+  "upc": "740100230311",
+  "price": 19.95,
+  "category": "SODAS"
+ },
+ {
+  "id": 155,
+  "code": "DA-SOD-106",
+  "name": "TIKY Piña  6/3L",
+  "upc": "740100230320",
+  "price": 28.95,
+  "category": "SODAS"
+ },
+ {
+  "id": 156,
+  "code": "DA-SOD-107",
+  "name": "MIRINDA 6/3LT",
+  "upc": "742160110005",
+  "price": 28.99,
+  "category": "SODAS"
+ },
+ {
+  "id": 157,
+  "code": "DA-SOD-108",
+  "name": "PEPSI 6/3LT",
+  "upc": "742160030100",
+  "price": 28.99,
+  "category": "SODAS"
+ },
+ {
+  "id": 158,
+  "code": "DA-SOD-109",
+  "name": "TROPICAL BANANA 6/3LT",
+  "upc": "742211010057",
+  "price": 28.99,
+  "category": "SODAS"
+ },
+ {
+  "id": 159,
+  "code": "DA-SOD-110",
+  "name": "TROPICAL UVA 6/3LT",
+  "upc": "784562014506",
+  "price": 28.99,
+  "category": "SODAS"
  }
 ]

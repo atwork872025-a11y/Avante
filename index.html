@@ -83,6 +83,12 @@
   #saveBtn{margin:10px 12px 12px;padding:12px;border:none;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;font-size:14px;cursor:pointer;}
   #saveBtn:active{opacity:.85;}
   .delBtn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 6px;border-radius:5px;}
+  .viewBtn:hover{background:#e1ecfb;}
+  .orderRowClick{display:flex;justify-content:space-between;align-items:center;padding:10px 8px;border-bottom:1px solid var(--gray2);cursor:pointer;font-size:12.5px;}
+  .orderRowClick:hover{background:var(--gray);}
+  .orderItemLine{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--gray);font-size:12.5px;gap:8px;}
+  .orderItemLine .oiName{flex:1;}
+  .orderItemLine .oiSub{font-weight:700;white-space:nowrap;}
   .delBtn:hover{background:#fbe4e1;}
   #cartTotalBox .totLabel{font-size:12px;color:var(--muted);}
   #cartTotalBox .totVal{font-size:22px;font-weight:800;color:var(--navy);}
@@ -139,7 +145,6 @@
 </style>
 </head>
 <body>
-<div id="loadingStatus" style="position:fixed;inset:0;background:#0a1128;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;z-index:9999;">Cargando catálogo...</div>
 <div id="app">
 
   <div id="topbar">
@@ -187,6 +192,16 @@
       </table>
     </div>
 
+    <!-- PRICES VIEW -->
+    <div id="pricesView" class="flatView" style="display:none;">
+      <h2>PRICES — Precio base por producto</h2>
+      <div class="searchTop"><input type="text" id="pricesSearch" placeholder="Buscar producto o código..."></div>
+      <table class="dataTbl">
+        <thead><tr><th>Código</th><th>Producto</th><th>Categoría</th><th>Precio de catálogo</th><th>Precio actual (editable)</th></tr></thead>
+        <tbody id="pricesTbody"></tbody>
+      </table>
+    </div>
+
     <!-- REPORTS VIEW -->
     <div id="reportsView" class="flatView" style="display:none;">
       <h2>REPORTS — Resumen por tienda</h2>
@@ -229,8 +244,17 @@
 <div id="menuModal" class="modalBox">
   <div class="menuOpt" onclick="switchView('preorder')"><span class="ico">🛒</span>PREORDER</div>
   <div class="menuOpt" onclick="switchView('stock')"><span class="ico">📦</span>STOCK</div>
+  <div class="menuOpt" onclick="switchView('prices')"><span class="ico">💲</span>PRICES</div>
   <div class="menuOpt" onclick="switchView('reports')"><span class="ico">📊</span>REPORTS</div>
   <div class="menuOpt" onclick="switchView('invoices')"><span class="ico">🧾</span>INVOICES</div>
+</div>
+
+<div id="orderDetailModal" class="modalBox" style="width:360px;max-height:80vh;overflow-y:auto;">
+  <h3 id="orderDetailTitle">Detalle</h3>
+  <div id="orderDetailBody"></div>
+  <div class="btnRow" style="margin-top:14px;">
+    <button class="btnCancel" onclick="closeModals()" style="flex:1;">Cerrar</button>
+  </div>
 </div>
 
 
@@ -238,14 +262,6 @@
 window.CUSTOMERS = [{"name": "TOBACCO THE PLAZA EASTWAY", "location": "4450 The Plaza STE C, Charlotte. 28215"}, {"name": "7 ELEVEN NATION FORD", "location": "8925 Nations Ford Rd"}, {"name": "7TH NYA DELY", "location": ""}, {"name": "A&Y TOBACCO", "location": ""}, {"name": "ABARROTES SOL DEL VALLE", "location": "5859 Albemarle Rd, Charlotte, NC. 28212"}, {"name": "ANA FASHION", "location": "5630 Farm Pond Ln, Charlotte, NC 28212"}, {"name": "ARIADNAS BEAUTY SALON", "location": "6021 The Plaza E, Charlotte, NC. 28215"}, {"name": "BESSEMER", "location": "Bessemer"}, {"name": "BEST BARGAINS DEALS LLC", "location": "1517 S Lafayette St. Shelby. NC. 28152"}, {"name": "CENTRAL LATINAMERICAN FOODS LLC", "location": ""}, {"name": "CENTRAL MARKET CHARLOTTE", "location": "6413 Albemarle Rd, Charlotte, NC.28212"}, {"name": "PCC CHECK CASHING", "location": "4621 Central Ave Ste C. Charlotte. NC. 28205"}, {"name": "CHERRY SMOKE SHOP", "location": "1158 Cherry Rd, Rock Hill. 29732"}, {"name": "CITGO NATION FORD", "location": "9001 Nations Ford Rd"}, {"name": "COMMON MARKET", "location": "2007 Commonwealth Ave. Charlotte. 28205"}, {"name": "DANY'S SUPERMARKET", "location": "6129 The Plaza, Charlotte, NC. 28215"}, {"name": "DELTA TOBACCO VAPE INC", "location": "7209 e WT Harris Blvd Ste C. Charlotte, NC. 28227"}, {"name": "EL MARIACHI SUPERMARKET", "location": "6301 N Tryon St Suite 101-105, Charlotte, NC 28213"}, {"name": "EL Y ELLA SALON LATINO", "location": "9229 Lawyers Rd, Mint Hill. NC. 28227"}, {"name": "ESPERANZA SUPERMARKET", "location": "6233 South Blvd, Charlotte, NC. 28217"}, {"name": "EUFORIA 2 TOBACCO VAPE", "location": "343 Huntersville Gateway Blvd. Huntersville, NC. 28078"}, {"name": "Exotics Smoke Shop 2030", "location": "8920 S Tryon St. Charlotte. 28273"}, {"name": "FAMILY MART", "location": ""}, {"name": "FIRE TOBACCO DAVID COX", "location": "3710 David Cox Rd. 28269"}, {"name": "FIRE TOBACCO DAVIS LAKE", "location": "8517 Davis Lake Prwy 28269"}, {"name": "FIRE TOBACCO HARRIS", "location": "3718 W T Harris Blvd"}, {"name": "FRUTERIA MERCY", "location": "600 Eastway Dr, Charlotte, NC. 28205"}, {"name": "G&Z TOBACCO VAPE", "location": "4016C Wilkinson Blvd, Charlotte, NC. 28208"}, {"name": "HAPPY CORNER SMOKE SHOP INC  (GAS STATION)", "location": "601 Eastway Dr, Charlotte, NC. 28205"}, {"name": "HAPPY HERB DISPENSARY", "location": "4314 The Plaza A, Charlotte, NC. 28205"}, {"name": "HICKORY GROVE DISCOUNT TOBACCO", "location": "7008 E WT Harris Blvd #23, Charlotte, NC. 28215"}, {"name": "HIGH END DISPENSARY", "location": ""}, {"name": "HOUSE OF CLOUDS", "location": "529 N College St. Charlotte. 28202"}, {"name": "HOUSE OF SMOKE", "location": ""}, {"name": "INNER HARBOR SEAFOOD MARKET", "location": "3019 Central Ave, Charlotte, NC. 28205"}, {"name": "ISLAND VAPE & CIGAR Downtown", "location": "718 W Trade St. Charlotte. 28202"}, {"name": "ISLAND VAPE AND TOBACCO", "location": ""}, {"name": "KANGOORO EXPRESS = APEX", "location": "7255 Albemarle Rd. Charlotte. 28227"}, {"name": "KING TOBACCO  E KING", "location": "507 E King St STE 2. King Mountain 28086"}, {"name": "KWIK STOP", "location": "W Craighead Rd, Charlotte, NC. 28206"}, {"name": "LA BELLA STORE SUPERMARKET", "location": "2937 Shamrock Dr, Charlotte, NC. 28205"}, {"name": "LA FAVORITA TIENDA LATINA", "location": "907 Gastonia Hwy, Bessemer City, NC. 28016"}, {"name": "LA MORENITA HICKORY", "location": "2354 Springs Rd NE, Hickory, NC. 28601"}, {"name": "LA PALOMA HUNTERSVILLE", "location": "116 S Main St, Huntersville NC. 28078"}, {"name": "LA SHISH KABOB", "location": "3117 N Sharon Amity Rd, Charlotte, NC. 28205"}, {"name": "LAZOS FRESH GASTONIA", "location": "Gastonia"}, {"name": "LEAF EXOTICS 1620 MONROE", "location": "1620 E Roosvelt Blvd Ste B1. Monroe 28112"}, {"name": "HELADERIA SWEETS CRAVINGS", "location": "4709 Margaret Wallace Rd, Matthews NC. 28105"}, {"name": "Supermercadito El Salvador", "location": "4729 Central Av, Charlotte, NC 28205"}, {"name": "MINI MART CHUCHO", "location": "925 Eastway Dr, Charlotte, NC. 28215"}, {"name": "MYANMAR ASIAN STORE", "location": "6903 E WT Harris Blvd Ste C-D, Charlotte, NC. 28215"}, {"name": "NODA TOBACCO AND CIGAR SHOP", "location": "343 W Craighead Rd, Charlotte, NC"}, {"name": "NODA VAPE & CIGAR", "location": ""}, {"name": "NORTH STAR HOOKAH", "location": "5015 N Tryon St, Charlotte NC. 28213"}, {"name": "ONE N GRAHAM", "location": "2103 N Graham St"}, {"name": "PANADERIA SALVADORENA", "location": "5724 E WT Harris Blvd, Charlotte, NC. 28215"}, {"name": "PLAZA MARKET", "location": "6184 The Plaza, Charlotte, NC. 28215"}, {"name": "PUFF TOBACCO CENTRAL AVE", "location": "1318 Pecan Ave Ste 101. Charlotte. 28205"}, {"name": "PUFF VAPE TOBACCO", "location": "2600 Central Ave, Charlotte, NC. 28205"}, {"name": "QUICK N EZ", "location": "1419 W Trade St"}, {"name": "QUICK N EZ (405)", "location": ""}, {"name": "RHINO MARKET MOREHEAD", "location": "1500 W Morehead St Ste E. Charlotte. 28028"}, {"name": "RHINO MARKET SOUTHEND", "location": "1414 S Tryon St Ste 120. Charlotte. 28203"}, {"name": "RHINO MART DELY NODA", "location": "2320 N. Davidson St. Ste B. Charlotte. 28205"}, {"name": "RHINO MART", "location": "5501 Josh Birmingham Pkwy, Charlotte, NC. 28208"}, {"name": "Rhino Noda", "location": ""}, {"name": "ROSALIAS INSURANCE", "location": "4621 Central Ave, Charlotte, NC. 28205"}, {"name": "SAV/WAY", "location": "4459 Central Ave, Charlotte, NC. 28205"}, {"name": "SEALZ & DEALZ", "location": "4436 South Blvd B, Charlotte, NC. 28209"}, {"name": "SMOKE SHOP 2030  2415 MOREHEAD", "location": "2415 W Morehead St. Charlotte. 28208"}, {"name": "SMOKE SHOP 2030  2510 W SUGAR CREEK", "location": "2510 W Sugar Creek Rd. Charlotte. 28262"}, {"name": "SMOKE SHOP 2030  2800 W SUGAR CREEK", "location": "W Sugar Creek Rd Ste 3. Charlotte. 28262"}, {"name": "SMOKE SHOP 2030  3717 SHARON", "location": "3717 N Sharon Amity Rd Ste A. Charlotte. 28205"}, {"name": "SMOKE SHOP 2030  4749 S BLVD", "location": "4749 S. Blvd"}, {"name": "SMOKE SHOP 2030  8920 S TRYON", "location": "8920 S Tryon St. Charlotte. 28273"}, {"name": "SMOKE SHOP 2030 201 W ARROWOOD", "location": "201 West Arrowood"}, {"name": "SMOKE SHOP 2030 7011 S BLVD", "location": "7001 S Blvd Ste E. Charlotte. 28217"}, {"name": "SMOKE SHOP 2030 7520 S TRYON", "location": "7520 S Tryon"}, {"name": "SMOKERS WORLD 4", "location": ""}, {"name": "SMOKEY M10 TOBACCO & VAPE", "location": ""}, {"name": "SUPERMERCADO LA TAPATIA LLC", "location": "1501 Cherry rd, Rock Hill, SC. 29732"}, {"name": "TIENDA EL EXITO", "location": "210 Signal Hill Dr, Statesville NC. 28625"}, {"name": "TIENDA EL TIGRE MINI SUPER #2", "location": "5025 N Tryon St, Charlotte NC."}, {"name": "TIENDA EL TORO CORNELIUS", "location": "19900 S Maon St Suite 5, Cornelius NC. 28031"}, {"name": "TIENDA EL TRIUNFO", "location": "611 E Franklin Blvd, Gastonia NC. 28054"}, {"name": "TIENDA LA PACHUQUEÑA", "location": "7520 S tryon St.16. Charlotte NC. 28217"}, {"name": "Tienda Maria Cornelius", "location": "19816 S Main St, Cornelius NC. 28031"}, {"name": "Tienda Maria Huntersville", "location": "10410 Arahova Dr, Suite B, Huntersville NC. 28078"}, {"name": "TIENDA RIOS DE AGUA VIVA", "location": "560 Turnersburg Hwy Ste J, Statesville NC. 28625"}, {"name": "TIENDA TRES HERMANOS", "location": "4TH Street Southwest, Hickory, NC"}, {"name": "TOBACCO & VAPE 1379 E.MAIN ST", "location": "1379 E Main St. Rock Hill. 29730"}, {"name": "TOBACCO & VAPE 9236 S BLVD", "location": "9236 S Blvd, Charlotte, NC"}, {"name": "TOBACCO AND VAPE MINT HILL", "location": "Mint Hill"}, {"name": "TOBACCO AND VAPE NODA", "location": "34 St The Plaza, Charlotte, NC"}, {"name": "TOBACCO AND VAPE SKY HIGH", "location": "1610 Ashley Rd Ste 8. Charlotte. 28208"}, {"name": "TOBACCO MONROE", "location": "2410 W Roosveelt Blvd Ste G. Monroe 28110"}, {"name": "TOBACCO N TRYON", "location": ""}, {"name": "TOBACCO UNIVERSITY (INV 410)", "location": "5700 University Point"}, {"name": "TOBACCO VAPE SOUTH END", "location": "4436 S Blvd Ste C. Charlotte. NC"}, {"name": "TOBACCO VAPE THE PLAZA (408)", "location": "3124 The Plaza, Charlotte. 28205"}, {"name": "TOP SHELF CANDLE CO.", "location": "9402 Northlake Wets Drive 101, Charlotte NC. 28216"}, {"name": "UPTOWN MART JENISHA LLC", "location": "201 E Blvd. Carlotte 28203"}, {"name": "UPTOWN SMOKE SHOP", "location": ""}, {"name": "UPTOWN SMOKE SHOP 94050", "location": ""}, {"name": "WOODIES N TRYON", "location": "520 N Tryon St"}, {"name": "WOODIES UPTOWN", "location": "9402 Northlake West Drive 101, Charlotte, NC. 28216"}, {"name": "WOW SUPERMARKET GASTONIA", "location": "2557 W Flanklin Blvd, Gastonia NC. 28052"}, {"name": "Z TOBACCO & VAPE", "location": "1135 E Marion St, Shelby Nc. 28150"}];
 </script>
 
-<!-- ============================================================
-     CONFIGURACION DE FIREBASE (opcional, para STOCK/REPORTS/INVOICES
-     compartidos en tiempo real entre dispositivos).
-     Si NO quieres esto todavia, deja tal cual: la app funciona
-     igual que antes, guardando todo solo en este dispositivo.
-     Para activarlo: sigue la guia y reemplaza los valores abajo
-     con los que te da la consola de Firebase de tu proyecto.
-     ============================================================ -->
 <script>
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyAD1XYK7Koki7P1jsLss6Vxzd8ZeS4RXiw",
@@ -693,22 +709,20 @@ var activeCategory = "Todo";
 var searchTerm = "";
 var currentView = "preorder";
 
-var stockData = {};        // {id: qty} - synced live from Firestore (or localStorage fallback)
-var ordersHistory = [];    // [{po,date,store,location,items,total,status,ts}] - synced live
+var stockData = {};
+var ordersHistory = [];
+var priceOverrides = {};  // {id: price} - shared "base" price across devices (PRICES tab)
+var customPrices = {};    // {id: price} - per-order override, this device/session only
 
-// ===================== FIRESTORE SYNC (shared across devices) =====================
-// If window.FIREBASE_CONFIG is filled in (see top of index.html), stock/orders live-sync
-// across every device using this app. If not configured, falls back to this device only
-// (localStorage), exactly like before.
 var db = null;
 var FIREBASE_ON = false;
 
 function initFirebaseSync(){
   const cfg = window.FIREBASE_CONFIG;
   if(!cfg || !cfg.apiKey || cfg.apiKey.indexOf('PEGA_AQUI') === 0){
-    // Not configured: fall back to local-only storage (previous behavior)
     stockData = loadLS('avante_stock_v2', {});
     ordersHistory = loadLS('avante_orders', []);
+    priceOverrides = loadLS('avante_prices', {});
     return;
   }
   try{
@@ -724,6 +738,14 @@ function initFirebaseSync(){
       if(currentView === 'stock') renderStockView();
     });
 
+    db.collection('prices').onSnapshot(snap => {
+      const next = {};
+      snap.forEach(doc => { next[doc.id] = doc.data().price; });
+      priceOverrides = next;
+      renderProducts();
+      if(currentView === 'prices') renderPricesView();
+    });
+
     db.collection('orders').orderBy('ts').onSnapshot(snap => {
       const next = [];
       snap.forEach(doc => next.push(doc.data()));
@@ -735,9 +757,9 @@ function initFirebaseSync(){
     console.error('Firebase no se pudo iniciar, usando almacenamiento local.', e);
     stockData = loadLS('avante_stock_v2', {});
     ordersHistory = loadLS('avante_orders', []);
+    priceOverrides = loadLS('avante_prices', {});
   }
 }
-var customPrices = {};                                 // {id: price} in-memory per session
 
 function uid(){ return 'S' + Math.random().toString(36).slice(2,9); }
 
@@ -752,17 +774,33 @@ function getProduct(id){ return window.PRODUCTS.find(p => p.id === Number(id)); 
 
 function getStock(id){ return stockData[id] !== undefined ? stockData[id] : null; }
 function setStock(id, val){
-  stockData[id] = val; // optimistic local update, listener will reconcile if Firestore is on
+  stockData[id] = val;
   if(FIREBASE_ON){
     db.collection('stock').doc(String(id)).set({ qty: val }).catch(e => console.error('Stock sync error', e));
   } else {
     saveLS('avante_stock_v2', stockData);
   }
 }
+function getPriceOverride(id){ return priceOverrides[id] !== undefined ? priceOverrides[id] : null; }
+function setPriceOverride(id, val){
+  priceOverrides[id] = val;
+  if(FIREBASE_ON){
+    db.collection('prices').doc(String(id)).set({ price: val }).catch(e => console.error('Price sync error', e));
+  } else {
+    saveLS('avante_prices', priceOverrides);
+  }
+  renderProducts();
+}
 
 function getEffectivePrice(p){
   if(customPrices[p.id] !== undefined) return customPrices[p.id];
+  const override = getPriceOverride(p.id);
+  if(override !== null) return override;
   return p.price;
+}
+function getBasePrice(p){
+  const override = getPriceOverride(p.id);
+  return override !== null ? override : p.price;
 }
 
 // ===================== PO NUMBER (daily reset) =====================
@@ -811,6 +849,7 @@ function init(){
   renderProducts();
   renderCart();
   renderStockView();
+  renderPricesView();
   renderReportsView();
   renderInvoicesView();
 
@@ -845,6 +884,7 @@ function init(){
     });
   });
   document.getElementById('stockSearch').addEventListener('input', renderStockView);
+  document.getElementById('pricesSearch').addEventListener('input', renderPricesView);
 }
 
 // ===================== STORE AUTOCOMPLETE =====================
@@ -888,6 +928,7 @@ function switchView(view){
   closeModals();
   document.getElementById('preorderView').style.display = view === 'preorder' ? 'flex' : 'none';
   document.getElementById('stockView').style.display = view === 'stock' ? 'block' : 'none';
+  document.getElementById('pricesView').style.display = view === 'prices' ? 'block' : 'none';
   document.getElementById('reportsView').style.display = view === 'reports' ? 'block' : 'none';
   document.getElementById('invoicesView').style.display = view === 'invoices' ? 'block' : 'none';
   document.getElementById('storeTabs').style.display = view === 'preorder' ? 'flex' : 'none';
@@ -896,6 +937,7 @@ function switchView(view){
   document.getElementById('cartToggle').style.display = view === 'preorder' ? '' : 'none';
   renderMenuActiveLabel();
   if(view === 'stock') renderStockView();
+  if(view === 'prices') renderPricesView();
   if(view === 'reports') renderReportsView();
   if(view === 'invoices') renderInvoicesView();
 }
@@ -916,7 +958,13 @@ function renderSidebar(){
     const div = document.createElement('div');
     div.className = 'catItem' + (cat === activeCategory ? ' active' : '');
     div.innerHTML = escapeHtml(cat) + ' <span class="catCount">(' + count + ')</span>';
-    div.onclick = () => { activeCategory = cat; renderSidebar(); renderProducts(); };
+    div.onclick = () => {
+      activeCategory = cat;
+      renderSidebar();
+      renderProducts();
+      const area = document.getElementById('productArea');
+      if(area) area.scrollTop = 0;
+    };
     sidebar.appendChild(div);
   });
 }
@@ -1120,6 +1168,30 @@ function updateStockValue(id, val){
   renderProducts();
 }
 
+// ===================== PRICES VIEW =====================
+function renderPricesView(){
+  const tbody = document.getElementById('pricesTbody');
+  const q = (document.getElementById('pricesSearch').value || '').toLowerCase();
+  tbody.innerHTML = '';
+  window.PRODUCTS
+    .filter(p => !q || p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q))
+    .forEach(p => {
+      const override = getPriceOverride(p.id);
+      const current = override !== null ? override : p.price;
+      tbody.appendChild((() => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${escapeHtml(p.code)}</td><td>${escapeHtml(p.name)}</td><td>${escapeHtml(p.category)}</td>
+          <td>$${p.price.toFixed(2)}</td>
+          <td>$<input type="number" step="0.01" class="stockInput" value="${current}" onchange="updatePriceValue(${p.id}, this.value)"></td>`;
+        return tr;
+      })());
+    });
+}
+function updatePriceValue(id, val){
+  const v = parseFloat(val);
+  setPriceOverride(id, isNaN(v) ? 0 : v);
+}
+
 // ===================== REPORTS VIEW =====================
 function renderReportsView(){
   const byStore = {};
@@ -1140,9 +1212,44 @@ function renderReportsView(){
   Object.entries(byStore).sort((a,b)=>b[1].total-a[1].total).forEach(([store, d]) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td>${escapeHtml(store)}</td><td>${d.count}</td><td>$${d.total.toFixed(2)}</td><td>${escapeHtml(d.last)}</td>
-      <td><button class="delBtn" onclick="deleteStoreReport('${escapeHtml(store).replace(/'/g,"\\'")}')">🗑</button></td>`;
+      <td>
+        <button class="delBtn viewBtn" onclick="showStoreOrders('${escapeHtml(store).replace(/'/g,"\\'")}')">👁</button>
+        <button class="delBtn" onclick="deleteStoreReport('${escapeHtml(store).replace(/'/g,"\\'")}')">🗑</button>
+      </td>`;
     tbody.appendChild(tr);
   });
+}
+function showStoreOrders(store){
+  const orders = ordersHistory.filter(o => o.store === store).slice().reverse();
+  const body = document.getElementById('orderDetailBody');
+  document.getElementById('orderDetailTitle').textContent = 'Pedidos de ' + store;
+  body.innerHTML = orders.map(o => `
+    <div class="orderRowClick" onclick="showOrderDetail('${o.po}')">
+      <div><b>${escapeHtml(o.po)}</b> — ${escapeHtml(o.date)}</div>
+      <div>$${o.total.toFixed(2)} <span class="statusSel ${o.status}" style="padding:2px 8px;border-radius:5px;">${o.status}</span></div>
+    </div>
+  `).join('') || '<div class="emptyMsg">Sin pedidos</div>';
+  document.getElementById('modalBackdrop').classList.add('show');
+  document.getElementById('orderDetailModal').classList.add('show');
+}
+function showOrderDetail(po){
+  const o = ordersHistory.find(o => o.po === po);
+  if(!o) return;
+  const body = document.getElementById('orderDetailBody');
+  document.getElementById('orderDetailTitle').textContent = po + ' — ' + o.store;
+  const itemsHtml = o.items.map(i => `
+    <div class="orderItemLine">
+      <div class="oiName">${escapeHtml(i.name)} <span class="clqty">x${i.qty}</span>${i.note ? '<br><i style="color:#888;font-size:11px;">Nota: '+escapeHtml(i.note)+'</i>' : ''}</div>
+      <div class="oiSub">$${i.subtotal.toFixed(2)}</div>
+    </div>
+  `).join('');
+  body.innerHTML = `
+    <div style="margin-bottom:8px;font-size:12px;color:var(--muted);">Fecha: ${escapeHtml(o.date)} · Ubicación: ${escapeHtml(o.location||'-')} · Estado: <b>${o.status}</b></div>
+    ${itemsHtml}
+    <div style="text-align:right;font-weight:800;margin-top:10px;font-size:15px;">TOTAL: $${o.total.toFixed(2)}</div>
+  `;
+  document.getElementById('modalBackdrop').classList.add('show');
+  document.getElementById('orderDetailModal').classList.add('show');
 }
 function deleteStoreReport(store){
   if(!confirm('¿Borrar todos los preorders de "' + store + '"? Esto también los quita de INVOICES.')) return;
@@ -1170,7 +1277,10 @@ function renderInvoicesView(){
         <option value="UNPAID" ${o.status==='UNPAID'?'selected':''}>UNPAID</option>
         <option value="PAID" ${o.status==='PAID'?'selected':''}>PAID</option>
       </select></td>
-      <td><button class="delBtn" onclick="deleteInvoice('${o.po}')">🗑</button></td>`;
+      <td>
+        <button class="delBtn viewBtn" onclick="showOrderDetail('${o.po}')">👁</button>
+        <button class="delBtn" onclick="deleteInvoice('${o.po}')">🗑</button>
+      </td>`;
     tbody.appendChild(tr);
   });
 }
