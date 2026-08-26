@@ -434,8 +434,8 @@
  {
   "id": 55,
   "code": "DA-AMP-102",
-  "name": "AMP 365 ENERGY DRINK (FORTE) ROJA 12/600 ML",
-  "upc": "740100591052",
+  "name": "AMP 365 ENERGY DRINK GOLD 12/600 ML",
+  "upc": "740100590686",
   "price": 22.99,
   "category": "ENERGY DRINKS"
  },
@@ -761,6 +761,14 @@
  },
  {
   "id": 96,
+  "code": "",
+  "name": "MAYONESA MCCORMICK LIMON 725GR",
+  "upc": "750100330585",
+  "price": 70.2,
+  "category": "GROCERY"
+ },
+ {
+  "id": 97,
   "code": "DA-MIS-101",
   "name": "Viloe Jelly Pop 40g 12pcs 6 bags",
   "upc": "108100068728",
@@ -768,7 +776,7 @@
   "category": "MISC"
  },
  {
-  "id": 97,
+  "id": 98,
   "code": "DA-MIS-102",
   "name": "Velas Plain DAKAR White",
   "upc": "900000000001",
@@ -776,7 +784,7 @@
   "category": "MISC"
  },
  {
-  "id": 98,
+  "id": 99,
   "code": "DA-MIS-103",
   "name": "Velas Plain DAKAR Red",
   "upc": "900000000002",
@@ -784,7 +792,7 @@
   "category": "MISC"
  },
  {
-  "id": 99,
+  "id": 100,
   "code": "DA-MIS-104",
   "name": "Velas Plain DAKAR Green",
   "upc": "900000000003",
@@ -792,7 +800,7 @@
   "category": "MISC"
  },
  {
-  "id": 100,
+  "id": 101,
   "code": "DA-MIS-105",
   "name": "Velas Plain DAKAR 7 colors",
   "upc": "900000000004",
@@ -800,7 +808,7 @@
   "category": "MISC"
  },
  {
-  "id": 101,
+  "id": 102,
   "code": "DA-SAB-101",
   "name": "SABRITAS PAKE-TAXO BOTANERO GRANDE 270 GR 1/12",
   "upc": "750101115486",
@@ -808,7 +816,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 102,
+  "id": 103,
   "code": "DA-SAB-102",
   "name": "SABRITAS PAKE-TAXO FLAMIN HOT GRANDE 1/12",
   "upc": "750101115022",
@@ -816,7 +824,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 103,
+  "id": 104,
   "code": "DA-SAB-103",
   "name": "SABRITAS PAKE-TAXO MEZCLADITO GRANDE 1/12",
   "upc": "750101113502",
@@ -824,7 +832,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 104,
+  "id": 105,
   "code": "DA-SAB-104",
   "name": "SABRITAS PAKE-TAXO QUESO AZUL GRANDE 1/12",
   "upc": "750047804420",
@@ -832,15 +840,15 @@
   "category": "SNACKS"
  },
  {
-  "id": 105,
+  "id": 106,
   "code": "DA-SAB-105",
-  "name": "SABRITAS PAKE-TAXO DARK FAMILIAR 1/13",
+  "name": "SABRITAS PAKE-TAXO DARK FAMILIAR 1/12",
   "upc": "750047804440",
   "price": 4.09,
   "category": "SNACKS"
  },
  {
-  "id": 106,
+  "id": 107,
   "code": "DA-SAB-106",
   "name": "SABRITAS SABRITONES GRANDE 1/10",
   "upc": "750101115108",
@@ -848,7 +856,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 107,
+  "id": 108,
   "code": "DA-SAB-107",
   "name": "CHEETOS FLAMING HOT 36/120 GR",
   "upc": "721282405573",
@@ -856,7 +864,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 108,
+  "id": 109,
   "code": "DA-SAB-108",
   "name": "CHEETO CRUNCHY EXTRA QUESO 36/120GR",
   "upc": "721282301059",
@@ -864,7 +872,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 109,
+  "id": 110,
   "code": "DA-SAB-109",
   "name": "CHEETO BOLITAS GRANDE 1/24",
   "upc": "750047804416",
@@ -872,7 +880,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 110,
+  "id": 111,
   "code": "DA-SAB-110",
   "name": "CHEETOS TORCIDITOS GRANDE 1/20",
   "upc": "750047804427",
@@ -880,7 +888,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 111,
+  "id": 112,
   "code": "DA-SAB-111",
   "name": "CHEETOS FLAMIN HOT GRANDE 1/20",
   "upc": "750101113093",
@@ -888,7 +896,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 112,
+  "id": 113,
   "code": "DA-SAB-112",
   "name": "CHEETOS POFFS GRANDE 1/24",
   "upc": "750047804410",
@@ -896,7 +904,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 113,
+  "id": 114,
   "code": "DA-SAB-113",
   "name": "CHEETOS COLMILLOS GRANDE 1/20",
   "upc": "750047804416",
@@ -904,7 +912,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 114,
+  "id": 115,
   "code": "DA-SAB-114",
   "name": "CHEETOS HORNEADOS 80gr",
   "upc": "721282301042",
@@ -912,7 +920,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 115,
+  "id": 116,
   "code": "DA-SAB-115",
   "name": "TOSTITOS FLAMIN HOT GRANDE 1/22",
   "upc": "750101113087",
@@ -920,7 +928,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 116,
+  "id": 117,
   "code": "DA-SAB-116",
   "name": "TOSTITOS SALSA VERDE GRAN 1/22",
   "upc": "750101113086",
@@ -928,7 +936,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 117,
+  "id": 118,
   "code": "DA-SAB-117",
   "name": "SABRITAS RUFFLES QUESO GRANDE 1/30",
   "upc": "750101116767",
@@ -936,7 +944,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 118,
+  "id": 119,
   "code": "DA-SAB-118",
   "name": "SABRITAS RANCHERITO GRANDE 1/24",
   "upc": "750101111451",
@@ -944,7 +952,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 119,
+  "id": 120,
   "code": "DA-SAB-119",
   "name": "DORITOS NACHOS GRANDE 1/24",
   "upc": "721282300397",
@@ -952,7 +960,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 120,
+  "id": 121,
   "code": "DA-SAB-120",
   "name": "CRUJITOS GRANDE 1/24",
   "upc": "750101113104",
@@ -960,7 +968,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 121,
+  "id": 122,
   "code": "DA-SAB-121",
   "name": "CRUJITO QUESO 17/120GR",
   "upc": "721282407645",
@@ -968,7 +976,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 122,
+  "id": 123,
   "code": "DA-SAB-122",
   "name": "CHURRUMAIS FLAMIN HOT GRANDE 1/20",
   "upc": "750047804228",
@@ -976,7 +984,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 123,
+  "id": 124,
   "code": "DA-SAB-123",
   "name": "CHURRUMAIS LIMON GRANDE 1/20",
   "upc": "750047800255",
@@ -984,7 +992,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 124,
+  "id": 125,
   "code": "DA-SAB-124",
   "name": "DORITO NACHO ATREVIDO 18/150GR",
   "upc": "721282300397",
@@ -992,7 +1000,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 125,
+  "id": 126,
   "code": "DA-SAB-125",
   "name": "Sabritas Receta Crujiente Flamin Hot",
   "upc": "750047804595",
@@ -1000,7 +1008,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 126,
+  "id": 127,
   "code": "DA-SAB-126",
   "name": "Sabritas Adobadas",
   "upc": "750101116766",
@@ -1008,7 +1016,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 127,
+  "id": 128,
   "code": "DA-SAB-127",
   "name": "FRIT-OS NACHO BARBACOA 10/325GR",
   "upc": "721282407034",
@@ -1016,7 +1024,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 128,
+  "id": 129,
   "code": "DA-SAB-128",
   "name": "FRITOS CHORIZO CHIPOTLE GRANDE 1/20",
   "upc": "750101115106",
@@ -1024,7 +1032,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 129,
+  "id": 130,
   "code": "DA-BAR-101",
   "name": "BARCEL RUNNERS CHILE LIMON 34/200GR",
   "upc": "750103042126",
@@ -1032,7 +1040,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 130,
+  "id": 131,
   "code": "DA-ZAM-101",
   "name": "ZAMBO PICOSOS 24/140 GR",
   "upc": "750894600267",
@@ -1040,7 +1048,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 131,
+  "id": 132,
   "code": "DA-ZAM-102",
   "name": "ZAMBO SALSA VERDE 24/140 GR",
   "upc": "750894600717",
@@ -1048,7 +1056,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 132,
+  "id": 133,
   "code": "DA-ZAM-103",
   "name": "ZAMBO ORIGINAL CASERO 24/140 GR",
   "upc": "750894602780",
@@ -1056,7 +1064,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 133,
+  "id": 134,
   "code": "DA-ZAM-104",
   "name": "ZAMBO MADURO 24/180 GR",
   "upc": "750894607181",
@@ -1064,7 +1072,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 134,
+  "id": 135,
   "code": "DA-ZAM-105",
   "name": "ZAMBO CEVICHE 24/138 GR",
   "upc": "750894610822",
@@ -1072,7 +1080,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 135,
+  "id": 136,
   "code": "DA-ZAM-106",
   "name": "ZAMBO RANCHITAS NACHO QUESO 24/150 GR",
   "upc": "750894602421",
@@ -1080,7 +1088,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 136,
+  "id": 137,
   "code": "DA-ZAM-107",
   "name": "RANCHITAS PICOSAS 24/150 GR",
   "upc": "750894606399",
@@ -1088,7 +1096,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 137,
+  "id": 138,
   "code": "DA-ZAM-108",
   "name": "ANILLITO DE PAPA 24/140 GR",
   "upc": "750894606627",
@@ -1096,7 +1104,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 138,
+  "id": 139,
   "code": "DA-ZAM-109",
   "name": "YUQUITA CHILE TOREADO 24/130 GR",
   "upc": "750894611966",
@@ -1104,7 +1112,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 139,
+  "id": 140,
   "code": "DA-ZAM-110",
   "name": "YUQUITA ORIGINAL 24/130 GR",
   "upc": "750894611973",
@@ -1112,7 +1120,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 140,
+  "id": 141,
   "code": "DA-ZAM-111",
   "name": "TAQUERITOS CHILE 24/180 GR",
   "upc": "750894609505",
@@ -1120,7 +1128,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 141,
+  "id": 142,
   "code": "DA-ZAM-112",
   "name": "TAQUERITOS QUESO FUSION 24/130 GR",
   "upc": "750894609499",
@@ -1128,7 +1136,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 142,
+  "id": 143,
   "code": "DA-ZAM-113",
   "name": "TAQUERITOS DRAGON DE HIELO 24/180 GR",
   "upc": "750894613243",
@@ -1136,7 +1144,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 143,
+  "id": 144,
   "code": "DA-ZAM-114",
   "name": "TAQUERITOS DRAGON DE FUEGO 24/180 GR",
   "upc": "750894613212",
@@ -1144,7 +1152,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 144,
+  "id": 145,
   "code": "DA-PDT-121",
   "name": "DT PLANTAIN SALADO 24/5.5 OZ",
   "upc": "797495907043",
@@ -1152,7 +1160,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 145,
+  "id": 146,
   "code": "DA-PDT-122",
   "name": "DT PLANTAIN MADURITO 24/5.5 OZ",
   "upc": "797495907067",
@@ -1160,7 +1168,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 146,
+  "id": 147,
   "code": "DA-PDT-123",
   "name": "DT PLANTAIN CHILE Y LIMON 24/5.5 OZ",
   "upc": "797495907081",
@@ -1168,7 +1176,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 147,
+  "id": 148,
   "code": "DA-PDT-124",
   "name": "DT PLANTAIN SALADO 12/18 OZ",
   "upc": "797495907050",
@@ -1176,7 +1184,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 148,
+  "id": 149,
   "code": "DA-PDT-125",
   "name": "DT PLANTAIN MADURITO 12/18 OZ",
   "upc": "797495907074",
@@ -1184,7 +1192,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 149,
+  "id": 150,
   "code": "DA-PDT-126",
   "name": "DT PLATAIN CHILE Y LIMON 12/18 OZ",
   "upc": "797495907098",
@@ -1192,7 +1200,7 @@
   "category": "SNACKS"
  },
  {
-  "id": 150,
+  "id": 151,
   "code": "DA-SOD-101",
   "name": "COCA COLA MINI 24/192 ML",
   "upc": "751055304745",
@@ -1200,7 +1208,7 @@
   "category": "SODAS"
  },
  {
-  "id": 151,
+  "id": 152,
   "code": "DA-SOD-102",
   "name": "COCA COLA 24/12 OZ",
   "upc": "422110106749",
@@ -1208,7 +1216,7 @@
   "category": "SODAS"
  },
  {
-  "id": 152,
+  "id": 153,
   "code": "DA-SOD-103",
   "name": "COCA COLA 12/1.25 LT",
   "upc": "850003134031",
@@ -1216,7 +1224,7 @@
   "category": "SODAS"
  },
  {
-  "id": 153,
+  "id": 154,
   "code": "DA-SOD-104",
   "name": "COCA COLA 6/3 LT",
   "upc": "742211010055",
@@ -1224,7 +1232,7 @@
   "category": "SODAS"
  },
  {
-  "id": 154,
+  "id": 155,
   "code": "DA-SOD-105",
   "name": "TIKY Pet Piña 12/20oz",
   "upc": "740100230311",
@@ -1232,7 +1240,7 @@
   "category": "SODAS"
  },
  {
-  "id": 155,
+  "id": 156,
   "code": "DA-SOD-106",
   "name": "TIKY Piña  6/3L",
   "upc": "740100230320",
@@ -1240,7 +1248,7 @@
   "category": "SODAS"
  },
  {
-  "id": 156,
+  "id": 157,
   "code": "DA-SOD-107",
   "name": "MIRINDA 6/3LT",
   "upc": "742160110005",
@@ -1248,7 +1256,7 @@
   "category": "SODAS"
  },
  {
-  "id": 157,
+  "id": 158,
   "code": "DA-SOD-108",
   "name": "PEPSI 6/3LT",
   "upc": "742160030100",
@@ -1256,7 +1264,7 @@
   "category": "SODAS"
  },
  {
-  "id": 158,
+  "id": 159,
   "code": "DA-SOD-109",
   "name": "TROPICAL BANANA 6/3LT",
   "upc": "742211010057",
@@ -1264,7 +1272,7 @@
   "category": "SODAS"
  },
  {
-  "id": 159,
+  "id": 160,
   "code": "DA-SOD-110",
   "name": "TROPICAL UVA 6/3LT",
   "upc": "784562014506",
