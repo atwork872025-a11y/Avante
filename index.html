@@ -56,13 +56,17 @@
   .pcard .pprice input{width:74px;font-size:14.5px;font-weight:700;padding:3px 5px;border:1px solid var(--gray2);border-radius:5px;}
   .qtyRow{display:flex;align-items:center;justify-content:space-between;margin-top:9px;gap:5px;}
   .qtyRow button{width:32px;height:32px;border-radius:7px;border:none;background:var(--gray2);font-size:17px;font-weight:800;cursor:pointer;color:var(--navy);flex-shrink:0;}
-  .qtyRow button.plus{background:var(--accent);color:#fff;}
+  .qtyRow button.plus{background:#22c55e;color:#fff;}
+  table.dataTbl input.priceNameInput{width:100%;min-width:160px;}
+  table.dataTbl input.priceUpcInput{width:100%;min-width:110px;}
   .qtyRow input.qtyInput{width:48px;text-align:center;font-size:14.5px;font-weight:800;border:1px solid var(--gray2);border-radius:6px;padding:5px 2px;}
 
   #cartPanel{width:280px;background:#fff;border-left:1px solid var(--gray2);display:flex;flex-direction:column;flex-shrink:0;}
   #cartHeader{padding:12px;border-bottom:1px solid var(--gray2);position:relative;}
-  .cartHeaderTop{display:flex;align-items:center;justify-content:space-between;}
+  .cartHeaderTop{display:flex;align-items:center;justify-content:space-between;gap:8px;}
   .cartHeaderIcon{font-size:22px;line-height:1;}
+  .cartHeaderSaveBtn{background:none;border:1px solid var(--gray2);border-radius:7px;font-size:16px;padding:4px 8px;cursor:pointer;}
+  .cartHeaderSaveBtn:active{background:var(--gray);}
   #cartHeader input{width:100%;padding:7px 9px;border:1px solid var(--gray2);border-radius:6px;font-size:13px;margin-top:5px;}
   #cartHeader label{font-size:11px;color:var(--muted);font-weight:700;}
   #storeSuggestions{position:absolute;left:12px;right:12px;background:#fff;border:1px solid var(--gray2);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.12);z-index:20;max-height:220px;overflow-y:auto;display:none;}
@@ -165,6 +169,7 @@
         <div id="cartHeader">
           <div class="cartHeaderTop">
             <div style="font-weight:800;font-size:15px;" id="cartStoreTitle">Tienda</div>
+            <button class="cartHeaderSaveBtn" onclick="exportAll()" title="Guardar">💾</button>
             <span class="cartHeaderIcon">🛒</span>
           </div>
           <label>Nombre de tienda</label>
@@ -194,10 +199,10 @@
 
     <!-- PRICES VIEW -->
     <div id="pricesView" class="flatView" style="display:none;">
-      <h2>PRICES — Precio base por producto</h2>
+      <h2>PRICES — Nombre, UPC y precio por producto</h2>
       <div class="searchTop"><input type="text" id="pricesSearch" placeholder="Buscar producto o código..."></div>
       <table class="dataTbl">
-        <thead><tr><th>Código</th><th>Producto</th><th>Categoría</th><th>Precio de catálogo</th><th>Precio actual (editable)</th></tr></thead>
+        <thead><tr><th>Código</th><th>Producto (editable)</th><th>UPC (editable)</th><th>Categoría</th><th>Precio (editable)</th></tr></thead>
         <tbody id="pricesTbody"></tbody>
       </table>
     </div>
@@ -275,7 +280,7 @@ window.FIREBASE_CONFIG = {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<script src="images.js?v=1787841356"></script>
+<script src="images.js?v=1788144807"></script>
 <script>
 
 /*! xlsx.js (C) 2013-present SheetJS -- http://sheetjs.com */
@@ -711,7 +716,7 @@ var currentView = "preorder";
 
 var stockData = {};
 var ordersHistory = [];
-var priceOverrides = {};  // {id: price} - shared "base" price across devices (PRICES tab)
+var fieldOverrides = {};  // {id: {price?, name?, upc?}} - shared across devices (PRICES tab)
 var customPrices = {};    // {id: price} - per-order override, this device/session only
 
 var db = null;
@@ -722,7 +727,7 @@ function initFirebaseSync(){
   if(!cfg || !cfg.apiKey || cfg.apiKey.indexOf('PEGA_AQUI') === 0){
     stockData = loadLS('avante_stock_v2', {});
     ordersHistory = loadLS('avante_orders', []);
-    priceOverrides = loadLS('avante_prices', {});
+    fieldOverrides = loadLS('avante_prices', {});
     return;
   }
   try{
@@ -740,8 +745,8 @@ function initFirebaseSync(){
 
     db.collection('prices').onSnapshot(snap => {
       const next = {};
-      snap.forEach(doc => { next[doc.id] = doc.data().price; });
-      priceOverrides = next;
+      snap.forEach(doc => { next[doc.id] = doc.data(); }); // {price?, name?, upc?}
+      fieldOverrides = next;
       renderProducts();
       if(currentView === 'prices') renderPricesView();
     });
@@ -757,7 +762,7 @@ function initFirebaseSync(){
     console.error('Firebase no se pudo iniciar, usando almacenamiento local.', e);
     stockData = loadLS('avante_stock_v2', {});
     ordersHistory = loadLS('avante_orders', []);
-    priceOverrides = loadLS('avante_prices', {});
+    fieldOverrides = loadLS('avante_prices', {});
   }
 }
 
@@ -781,15 +786,22 @@ function setStock(id, val){
     saveLS('avante_stock_v2', stockData);
   }
 }
-function getPriceOverride(id){ return priceOverrides[id] !== undefined ? priceOverrides[id] : null; }
+function getPriceOverride(id){ return getFieldOverride(id, 'price'); }
 function setPriceOverride(id, val){
-  priceOverrides[id] = val;
+  setFieldOverride(id, 'price', val);
+}
+function setFieldOverride(id, field, val){
+  if(!fieldOverrides[id]) fieldOverrides[id] = {};
+  fieldOverrides[id][field] = val;
   if(FIREBASE_ON){
-    db.collection('prices').doc(String(id)).set({ price: val }).catch(e => console.error('Price sync error', e));
+    db.collection('prices').doc(String(id)).set({ [field]: val }, { merge: true }).catch(e => console.error('Field sync error', e));
   } else {
-    saveLS('avante_prices', priceOverrides);
+    saveLS('avante_prices', fieldOverrides);
   }
   renderProducts();
+}
+function getFieldOverride(id, field){
+  return (fieldOverrides[id] && fieldOverrides[id][field] !== undefined) ? fieldOverrides[id][field] : null;
 }
 
 function getEffectivePrice(p){
@@ -801,6 +813,14 @@ function getEffectivePrice(p){
 function getBasePrice(p){
   const override = getPriceOverride(p.id);
   return override !== null ? override : p.price;
+}
+function getEffectiveName(p){
+  const o = getFieldOverride(p.id, 'name');
+  return (o !== null && o !== '') ? o : p.name;
+}
+function getEffectiveUpc(p){
+  const o = getFieldOverride(p.id, 'upc');
+  return (o !== null && o !== '') ? o : p.upc;
 }
 
 // ===================== PO NUMBER (daily reset) =====================
@@ -1029,21 +1049,23 @@ function renderProducts(){
   if(activeCategory !== "Todo") list = list.filter(p => p.category === activeCategory);
   if(searchTerm){
     list = list.filter(p =>
-      p.name.toLowerCase().includes(searchTerm) ||
+      getEffectiveName(p).toLowerCase().includes(searchTerm) ||
       (p.code || '').toLowerCase().includes(searchTerm) ||
-      (p.upc || '').toLowerCase().includes(searchTerm)
+      (getEffectiveUpc(p) || '').toLowerCase().includes(searchTerm)
     );
   }
   list.forEach(p => {
     const qty = (store && store.items[p.id]) || 0;
     const price = getEffectivePrice(p);
+    const name = getEffectiveName(p);
+    const upc = getEffectiveUpc(p);
     const card = document.createElement('div');
     card.className = 'pcard';
     card.innerHTML = `
       <img class="pimg" src="${p.img_data}" loading="lazy">
-      <div class="pname">${escapeHtml(p.name)}</div>
+      <div class="pname">${escapeHtml(name)}</div>
       <div class="pcode">${escapeHtml(p.code)}</div>
-      <div class="barcodeWrap"><svg id="bc_${p.id}"></svg><div class="upcText">${escapeHtml(p.upc || '')}</div></div>
+      <div class="barcodeWrap"><svg id="bc_${p.id}"></svg><div class="upcText">${escapeHtml(upc || '')}</div></div>
       ${stockTagHtml(p.id)}
       <div class="pprice">$<input type="number" step="0.01" min="0" value="${price}" onchange="setCustomPrice(${p.id}, this.value)"></div>
       <div class="qtyRow">
@@ -1053,9 +1075,9 @@ function renderProducts(){
       </div>
     `;
     grid.appendChild(card);
-    if(p.upc){
+    if(upc){
       try{
-        JsBarcode('#bc_' + p.id, p.upc, {format:"CODE128", displayValue:false, height:26, margin:0, background:"#ffffff00"});
+        JsBarcode('#bc_' + p.id, upc, {format:"CODE128", displayValue:false, height:26, margin:0, background:"#ffffff00"});
       }catch(e){ /* invalid upc, skip barcode render */ }
     }
   });
@@ -1134,7 +1156,7 @@ function renderCart(){
       const line = document.createElement('div');
       line.className = 'cartLine';
       const noteVal = store.notes[id] || '';
-      line.innerHTML = `<div class="clRow"><div class="clname">${escapeHtml(p.name)} <span class="clqty">x${qty}</span></div><div class="clsub">$${sub.toFixed(2)}</div></div>
+      line.innerHTML = `<div class="clRow"><div class="clname">${escapeHtml(getEffectiveName(p))} <span class="clqty">x${qty}</span></div><div class="clsub">$${sub.toFixed(2)}</div></div>
         <input type="text" class="clNote" placeholder="Nota para este producto..." value="${escapeHtml(noteVal)}" oninput="setNote(${id}, this.value)">`;
       cartItems.appendChild(line);
     });
@@ -1174,15 +1196,18 @@ function renderPricesView(){
   const q = (document.getElementById('pricesSearch').value || '').toLowerCase();
   tbody.innerHTML = '';
   window.PRODUCTS
-    .filter(p => !q || p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q))
+    .filter(p => !q || getEffectiveName(p).toLowerCase().includes(q) || p.code.toLowerCase().includes(q))
     .forEach(p => {
-      const override = getPriceOverride(p.id);
-      const current = override !== null ? override : p.price;
+      const currentPrice = getBasePrice(p);
+      const currentName = getEffectiveName(p);
+      const currentUpc = getEffectiveUpc(p);
       tbody.appendChild((() => {
         const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${escapeHtml(p.code)}</td><td>${escapeHtml(p.name)}</td><td>${escapeHtml(p.category)}</td>
-          <td>$${p.price.toFixed(2)}</td>
-          <td>$<input type="number" step="0.01" class="stockInput" value="${current}" onchange="updatePriceValue(${p.id}, this.value)"></td>`;
+        tr.innerHTML = `<td>${escapeHtml(p.code)}</td>
+          <td><input type="text" class="stockInput priceNameInput" value="${escapeHtml(currentName)}" onchange="updateNameValue(${p.id}, this.value)"></td>
+          <td><input type="text" class="stockInput priceUpcInput" value="${escapeHtml(currentUpc||'')}" onchange="updateUpcValue(${p.id}, this.value)"></td>
+          <td>${escapeHtml(p.category)}</td>
+          <td>$<input type="number" step="0.01" class="stockInput" value="${currentPrice}" onchange="updatePriceValue(${p.id}, this.value)"></td>`;
         return tr;
       })());
     });
@@ -1190,6 +1215,12 @@ function renderPricesView(){
 function updatePriceValue(id, val){
   const v = parseFloat(val);
   setPriceOverride(id, isNaN(v) ? 0 : v);
+}
+function updateNameValue(id, val){
+  setFieldOverride(id, 'name', val.trim());
+}
+function updateUpcValue(id, val){
+  setFieldOverride(id, 'upc', val.trim());
 }
 
 // ===================== REPORTS VIEW =====================
@@ -1326,7 +1357,7 @@ async function exportAll(){
     const p = getProduct(id);
     const price = getEffectivePrice(p);
     const note = (store.notes && store.notes[id]) || '';
-    return { code: p.code, upc: p.upc, name: p.name, price, qty, subtotal: price*qty, note };
+    return { code: p.code, upc: getEffectiveUpc(p), name: getEffectiveName(p), price, qty, subtotal: price*qty, note };
   });
   const total = items.reduce((a,i)=>a+i.subtotal,0);
 
