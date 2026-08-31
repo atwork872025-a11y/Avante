@@ -83,6 +83,14 @@
   .cartLine .clsub{font-weight:700;white-space:nowrap;}
   .cartLine .clNote{width:100%;margin-top:4px;padding:4px 6px;font-size:11px;border:1px solid var(--gray2);border-radius:5px;color:var(--text);}
   .cartLine .clNote::placeholder{color:#b7bec9;}
+  .clQtyRow{display:flex;align-items:center;gap:6px;margin-top:5px;}
+  .clQtyRow button{width:24px;height:24px;border-radius:6px;border:none;background:var(--gray2);font-size:14px;font-weight:800;cursor:pointer;color:var(--navy);flex-shrink:0;}
+  .clQtyRow button.plus{background:#22c55e;color:#fff;}
+  .clQtyInput{width:44px;text-align:center;font-size:12.5px;font-weight:700;border:1px solid var(--gray2);border-radius:5px;padding:3px 2px;}
+  .clDelBtn{margin-left:auto;background:none!important;border:none;font-size:14px;cursor:pointer;padding:2px 6px;border-radius:5px;width:auto!important;}
+  .clDelBtn:hover{background:#fbe4e1!important;}
+  #clearCartBtn{margin-top:8px;width:100%;padding:8px;border:1px solid var(--danger);background:#fff;color:var(--danger);border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer;}
+  #clearCartBtn:active{background:#fbe4e1;}
   #cartTotalBox{padding:12px;border-top:2px solid var(--navy);background:var(--gray);}
   #saveBtn{margin:10px 12px 12px;padding:12px;border:none;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;font-size:14px;cursor:pointer;}
   #saveBtn:active{opacity:.85;}
@@ -182,6 +190,7 @@
         <div id="cartTotalBox">
           <div class="totLabel">TOTAL PREORDER</div>
           <div class="totVal" id="cartTotalVal">$0.00</div>
+          <button id="clearCartBtn" onclick="clearActiveCart()" style="display:none;">🗑 Vaciar carrito</button>
         </div>
         <button id="saveBtn" onclick="exportAll()">💾 GUARDAR</button>
       </div>
@@ -280,7 +289,7 @@ window.FIREBASE_CONFIG = {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<script src="images.js?v=1788144807"></script>
+<script src="images.js?v=1788190068"></script>
 <script>
 
 /*! xlsx.js (C) 2013-present SheetJS -- http://sheetjs.com */
@@ -768,10 +777,32 @@ function initFirebaseSync(){
 
 function uid(){ return 'S' + Math.random().toString(36).slice(2,9); }
 
+// ===================== ACTIVE CARTS PERSISTENCE (this device) =====================
+// Keeps whatever the seller has open (stores, items, notes, custom prices) so that
+// closing the tab/app and coming back later restores exactly where they left off.
+function saveCartsToLocal(){
+  saveLS('avante_active_carts', { stores, activeStoreId, customPrices });
+}
+function loadCartsFromLocal(){
+  const data = loadLS('avante_active_carts', null);
+  if(data && Array.isArray(data.stores) && data.stores.length){
+    stores = data.stores.map(s => ({
+      id: s.id, name: s.name || "", location: s.location || "",
+      items: s.items || {}, notes: s.notes || {}, itemOrder: s.itemOrder || []
+    }));
+    activeStoreId = data.activeStoreId && stores.some(s => s.id === data.activeStoreId)
+      ? data.activeStoreId : stores[0].id;
+    customPrices = data.customPrices || {};
+    return true;
+  }
+  return false;
+}
+
 function createStore(name, location){
   const s = { id: uid(), name: name || "", location: location || "", items: {}, notes: {}, itemOrder: [] };
   stores.push(s);
   activeStoreId = s.id;
+  saveCartsToLocal();
   return s;
 }
 function getActiveStore(){ return stores.find(s => s.id === activeStoreId); }
@@ -862,7 +893,9 @@ function safeFileName(str){
 
 // ===================== INIT =====================
 function init(){
-  createStore("", "");
+  if(!loadCartsFromLocal()){
+    createStore("", "");
+  }
   renderMenuActiveLabel();
   renderSidebar();
   renderStoreTabs();
@@ -880,12 +913,14 @@ function init(){
   document.getElementById('storeNameInput').addEventListener('input', e => {
     const s = getActiveStore(); if(!s) return;
     s.name = e.target.value;
+    saveCartsToLocal();
     renderStoreTabs();
     showStoreSuggestions(e.target.value, 'storeSuggestions', (name, loc) => {
       s.name = name; s.location = loc;
       document.getElementById('storeNameInput').value = name;
       document.getElementById('storeLocInput').value = loc;
       hideStoreSuggestions('storeSuggestions');
+      saveCartsToLocal();
       renderStoreTabs();
     });
   });
@@ -895,6 +930,7 @@ function init(){
   document.getElementById('storeLocInput').addEventListener('input', e => {
     const s = getActiveStore(); if(!s) return;
     s.location = e.target.value;
+    saveCartsToLocal();
   });
   document.getElementById('modalStoreName').addEventListener('input', e => {
     showStoreSuggestions(e.target.value, 'modalStoreSuggestions', (name, loc) => {
@@ -1016,6 +1052,7 @@ function removeStore(id){
   if(stores.length <= 1) return;
   stores = stores.filter(s => s.id !== id);
   if(activeStoreId === id) activeStoreId = stores[0].id;
+  saveCartsToLocal();
   renderStoreTabs(); renderCart(); renderProducts();
 }
 function openNewStoreModal(){
@@ -1087,6 +1124,7 @@ function setCustomPrice(id, val){
   let v = parseFloat(val);
   if(isNaN(v) || v < 0) v = 0;
   customPrices[id] = v;
+  saveCartsToLocal();
   renderCart();
 }
 
@@ -1122,6 +1160,7 @@ function applyQtyChange(store, id, cur, next){
 
   const qtyInput = document.getElementById('qty_' + id);
   if(qtyInput) qtyInput.value = next;
+  saveCartsToLocal();
   renderCart();
   renderStoreTabs();
   renderProducts(); // refresh stock tags shown on cards
@@ -1130,6 +1169,7 @@ function setNote(id, val){
   const store = getActiveStore();
   if(!store) return;
   store.notes[id] = val;
+  saveCartsToLocal();
 }
 
 // ===================== CART =====================
@@ -1156,13 +1196,39 @@ function renderCart(){
       const line = document.createElement('div');
       line.className = 'cartLine';
       const noteVal = store.notes[id] || '';
-      line.innerHTML = `<div class="clRow"><div class="clname">${escapeHtml(getEffectiveName(p))} <span class="clqty">x${qty}</span></div><div class="clsub">$${sub.toFixed(2)}</div></div>
+      line.innerHTML = `<div class="clRow"><div class="clname">${escapeHtml(getEffectiveName(p))}</div><div class="clsub">$${sub.toFixed(2)}</div></div>
+        <div class="clQtyRow">
+          <button onclick="changeQty(${id}, -1)">−</button>
+          <input type="number" class="clQtyInput" value="${qty}" min="0" step="0.5" onchange="setQtyDirect(${id}, this.value)">
+          <button class="plus" onclick="changeQty(${id}, 1)">+</button>
+          <button class="clDelBtn" title="Eliminar" onclick="removeCartItem(${id})">🗑</button>
+        </div>
         <input type="text" class="clNote" placeholder="Nota para este producto..." value="${escapeHtml(noteVal)}" oninput="setNote(${id}, this.value)">`;
       cartItems.appendChild(line);
     });
   }
   document.getElementById('cartTotalVal').textContent = '$' + total.toFixed(2);
   document.getElementById('cartToggleBadge').textContent = count;
+  const clearBtn = document.getElementById('clearCartBtn');
+  if(clearBtn) clearBtn.style.display = (store && Object.keys(store.items).length > 0) ? 'inline-block' : 'none';
+}
+function removeCartItem(id){
+  const store = getActiveStore();
+  if(!store) return;
+  const cur = store.items[id] || 0;
+  applyQtyChange(store, id, cur, 0);
+}
+function clearActiveCart(){
+  const store = getActiveStore();
+  if(!store || Object.keys(store.items).length === 0) return;
+  if(!confirm('¿Vaciar todo el carrito de "' + (store.name || 'esta tienda') + '"?')) return;
+  Object.keys(store.items).forEach(id => {
+    const st = getStock(id);
+    if(st !== null) setStock(id, st + store.items[id]); // restore stock for each removed item
+  });
+  store.items = {}; store.notes = {}; store.itemOrder = [];
+  saveCartsToLocal();
+  renderCart(); renderStoreTabs(); renderProducts();
 }
 function toggleCart(){
   document.getElementById('cartPanel').classList.toggle('open');
@@ -1278,9 +1344,34 @@ function showOrderDetail(po){
     <div style="margin-bottom:8px;font-size:12px;color:var(--muted);">Fecha: ${escapeHtml(o.date)} · Ubicación: ${escapeHtml(o.location||'-')} · Estado: <b>${o.status}</b></div>
     ${itemsHtml}
     <div style="text-align:right;font-weight:800;margin-top:10px;font-size:15px;">TOTAL: $${o.total.toFixed(2)}</div>
+    <div class="btnRow" style="margin-top:12px;">
+      <button class="btnOk" style="flex:1;" onclick="editOrderAsCart('${po}')">✏️ Editar carrito</button>
+    </div>
   `;
   document.getElementById('modalBackdrop').classList.add('show');
   document.getElementById('orderDetailModal').classList.add('show');
+}
+function editOrderAsCart(po){
+  const o = ordersHistory.find(o => o.po === po);
+  if(!o) return;
+
+  const s = createStore(o.store, o.location || "");
+  o.items.forEach(item => {
+    // match back to a catalog product by code, then UPC, then exact name
+    let p = window.PRODUCTS.find(x => x.code && item.code && x.code.toUpperCase() === item.code.toUpperCase());
+    if(!p && item.upc) p = window.PRODUCTS.find(x => x.upc && x.upc === item.upc);
+    if(!p) p = window.PRODUCTS.find(x => x.name.toUpperCase() === item.name.toUpperCase());
+    if(!p) return; // product no longer in catalog, skip
+    s.items[p.id] = item.qty;
+    if(item.note) s.notes[p.id] = item.note;
+    s.itemOrder.push(p.id);
+    customPrices[p.id] = item.price; // preserve the exact price this order had
+  });
+
+  saveCartsToLocal();
+  closeModals();
+  switchView('preorder');
+  renderStoreTabs(); renderCart(); renderProducts();
 }
 function deleteStoreReport(store){
   if(!confirm('¿Borrar todos los preorders de "' + store + '"? Esto también los quita de INVOICES.')) return;
