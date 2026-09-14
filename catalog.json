@@ -1193,6 +1193,46 @@
  },
  {
   "id": 150,
+  "code": "DA-SAB-129",
+  "name": "DORITOS INCOGNITO",
+  "upc": "750047801213",
+  "price": 2.95,
+  "category": "SNACKS"
+ },
+ {
+  "id": 151,
+  "code": "DA-SAB-130",
+  "name": "FRITOS CHILE LIMON",
+  "upc": "750101113111",
+  "price": 2.89,
+  "category": "SNACKS"
+ },
+ {
+  "id": 152,
+  "code": "DA-BAR-102",
+  "name": "BARCEL CHIPS SAL",
+  "upc": "750100026620",
+  "price": 2.95,
+  "category": "SNACKS"
+ },
+ {
+  "id": 153,
+  "code": "DA-BAR-103",
+  "name": "BARCEL CHIPOTLE QUESO",
+  "upc": "753018544779",
+  "price": 2.95,
+  "category": "SNACKS"
+ },
+ {
+  "id": 154,
+  "code": "DA-BAR-104",
+  "name": "BARCEL CHIPS FUEGO",
+  "upc": "57528001889",
+  "price": 2.95,
+  "category": "SNACKS"
+ },
+ {
+  "id": 155,
   "code": "DA-SOD-101",
   "name": "COCA COLA MINI 24/192 ML",
   "upc": "751055304745",
@@ -1200,7 +1240,7 @@
   "category": "SODAS"
  },
  {
-  "id": 151,
+  "id": 156,
   "code": "DA-SOD-102",
   "name": "COCA COLA 24/12 OZ",
   "upc": "422110106749",
@@ -1208,7 +1248,7 @@
   "category": "SODAS"
  },
  {
-  "id": 152,
+  "id": 157,
   "code": "DA-SOD-103",
   "name": "COCA COLA 12/1.25 LT",
   "upc": "850003134031",
@@ -1216,7 +1256,7 @@
   "category": "SODAS"
  },
  {
-  "id": 153,
+  "id": 158,
   "code": "DA-SOD-104",
   "name": "COCA COLA 6/3 LT",
   "upc": "742211010055",
@@ -1224,7 +1264,7 @@
   "category": "SODAS"
  },
  {
-  "id": 154,
+  "id": 159,
   "code": "DA-SOD-105",
   "name": "TIKY Pet Piña 12/20oz",
   "upc": "740100230311",
@@ -1232,7 +1272,7 @@
   "category": "SODAS"
  },
  {
-  "id": 155,
+  "id": 160,
   "code": "DA-SOD-106",
   "name": "TIKY Piña  6/3L",
   "upc": "740100230320",
@@ -1240,7 +1280,7 @@
   "category": "SODAS"
  },
  {
-  "id": 156,
+  "id": 161,
   "code": "DA-SOD-107",
   "name": "MIRINDA 6/3LT",
   "upc": "742160110005",
@@ -1248,7 +1288,7 @@
   "category": "SODAS"
  },
  {
-  "id": 157,
+  "id": 162,
   "code": "DA-SOD-108",
   "name": "PEPSI 6/3LT",
   "upc": "742160030100",
@@ -1256,7 +1296,7 @@
   "category": "SODAS"
  },
  {
-  "id": 158,
+  "id": 163,
   "code": "DA-SOD-109",
   "name": "TROPICAL BANANA 6/3LT",
   "upc": "742211010057",
@@ -1264,7 +1304,7 @@
   "category": "SODAS"
  },
  {
-  "id": 159,
+  "id": 164,
   "code": "DA-SOD-110",
   "name": "TROPICAL UVA 6/3LT",
   "upc": "784562014506",
