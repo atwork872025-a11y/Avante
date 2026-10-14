@@ -213,7 +213,7 @@
       <h2>PRICES — Nombre, UPC y precio por producto</h2>
       <div class="searchTop"><input type="text" id="pricesSearch" placeholder="Buscar producto o código..."></div>
       <table class="dataTbl">
-        <thead><tr><th>Código</th><th>Producto (editable)</th><th>UPC (editable)</th><th>Categoría</th><th>Precio (editable)</th></tr></thead>
+        <thead><tr><th>Activo</th><th>Código</th><th>Producto (editable)</th><th>UPC (editable)</th><th>Categoría</th><th>Precio (editable)</th></tr></thead>
         <tbody id="pricesTbody"></tbody>
       </table>
     </div>
@@ -292,7 +292,7 @@ window.FIREBASE_CONFIG = {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<script src="images.js?v=1790604603"></script>
+<script src="images.js?v=1791983778"></script>
 <script>
 
 
@@ -766,6 +766,8 @@ function initFirebaseSync(){
       const next = {};
       snap.forEach(doc => { next[doc.id] = doc.data(); }); // {price?, name?, upc?}
       fieldOverrides = next;
+      if(!getCategories().includes(activeCategory)) activeCategory = "Todo";
+      renderSidebar();
       renderProducts();
       if(currentView === 'prices') renderPricesView();
     });
@@ -851,6 +853,7 @@ function getEffectivePrice(p){
   if(override !== null) return override;
   return p.price;
 }
+function isActive(p){ return getFieldOverride(p.id, 'hidden') !== true; }
 function getBasePrice(p){
   const override = getPriceOverride(p.id);
   return override !== null ? override : p.price;
@@ -1013,14 +1016,15 @@ function renderMenuActiveLabel(){
 
 // ===================== SIDEBAR (CATEGORIES, alfabetico) =====================
 function getCategories(){
-  const cats = Array.from(new Set(window.PRODUCTS.map(p=>p.category))).sort((a,b)=>a.localeCompare(b));
+  const cats = Array.from(new Set(window.PRODUCTS.filter(isActive).map(p=>p.category))).sort((a,b)=>a.localeCompare(b));
   return ["Todo", ...cats];
 }
 function renderSidebar(){
   const sidebar = document.getElementById('sidebar');
   sidebar.innerHTML = '';
   getCategories().forEach(cat => {
-    const count = cat === "Todo" ? window.PRODUCTS.length : window.PRODUCTS.filter(p=>p.category===cat).length;
+    const act = window.PRODUCTS.filter(isActive);
+    const count = cat === "Todo" ? act.length : act.filter(p=>p.category===cat).length;
     const div = document.createElement('div');
     div.className = 'catItem' + (cat === activeCategory ? ' active' : '');
     div.innerHTML = escapeHtml(cat) + ' <span class="catCount">(' + count + ')</span>';
@@ -1092,7 +1096,7 @@ function renderProducts(){
   const grid = document.getElementById('productGrid');
   grid.innerHTML = '';
   const store = getActiveStore();
-  let list = window.PRODUCTS;
+  let list = window.PRODUCTS.filter(isActive);
   if(activeCategory !== "Todo") list = list.filter(p => p.category === activeCategory);
   if(searchTerm){
     list = list.filter(p =>
@@ -1279,7 +1283,9 @@ function renderPricesView(){
       const currentUpc = getEffectiveUpc(p);
       tbody.appendChild((() => {
         const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${escapeHtml(p.code)}</td>
+        if(!isActive(p)) tr.style.opacity = '0.45';
+        tr.innerHTML = `<td style="text-align:center;"><input type="checkbox" ${isActive(p)?'checked':''} onchange="updateActiveValue(${p.id}, this.checked)" style="width:20px;height:20px;cursor:pointer;" title="Mostrar en catálogo"></td>
+          <td>${escapeHtml(p.code)}</td>
           <td><input type="text" class="stockInput priceNameInput" value="${escapeHtml(currentName)}" onchange="updateNameValue(${p.id}, this.value)"></td>
           <td><input type="text" class="stockInput priceUpcInput" value="${escapeHtml(currentUpc||'')}" onchange="updateUpcValue(${p.id}, this.value)"></td>
           <td>${escapeHtml(p.category)}</td>
@@ -1291,6 +1297,12 @@ function renderPricesView(){
 function updatePriceValue(id, val){
   const v = parseFloat(val);
   setPriceOverride(id, isNaN(v) ? 0 : v);
+}
+function updateActiveValue(id, checked){
+  setFieldOverride(id, 'hidden', !checked);
+  if(!getCategories().includes(activeCategory)) activeCategory = "Todo";
+  renderSidebar(); renderProducts();
+  if(currentView === 'prices') renderPricesView();
 }
 function updateNameValue(id, val){
   setFieldOverride(id, 'name', val.trim());
