@@ -58,7 +58,8 @@
   .qtyRow{display:flex;align-items:center;justify-content:space-between;margin-top:9px;gap:5px;}
   .qtyRow button{width:32px;height:32px;border-radius:7px;border:none;background:var(--gray2);font-size:17px;font-weight:800;cursor:pointer;color:var(--navy);flex-shrink:0;}
   .qtyRow button.plus{background:#22c55e;color:#fff;}
-  table.dataTbl input.priceNameInput{width:100%;min-width:160px;}
+  table.dataTbl input.priceNameInput,table.dataTbl textarea.priceNameInput{width:100%;min-width:300px;}
+table.dataTbl textarea.priceNameInput{font:inherit;font-size:13px;line-height:1.25;resize:vertical;padding:6px 8px;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;}
   table.dataTbl input.priceUpcInput{width:100%;min-width:110px;}
   .qtyRow input.qtyInput{width:48px;text-align:center;font-size:14.5px;font-weight:800;border:1px solid var(--gray2);border-radius:6px;padding:5px 2px;}
 
@@ -292,7 +293,7 @@ window.FIREBASE_CONFIG = {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<script src="images.js?v=1791983778"></script>
+<script src="images.js?v=1792367189"></script>
 <script>
 
 
@@ -1286,7 +1287,7 @@ function renderPricesView(){
         if(!isActive(p)) tr.style.opacity = '0.45';
         tr.innerHTML = `<td style="text-align:center;"><input type="checkbox" ${isActive(p)?'checked':''} onchange="updateActiveValue(${p.id}, this.checked)" style="width:20px;height:20px;cursor:pointer;" title="Mostrar en catálogo"></td>
           <td>${escapeHtml(p.code)}</td>
-          <td><input type="text" class="stockInput priceNameInput" value="${escapeHtml(currentName)}" onchange="updateNameValue(${p.id}, this.value)"></td>
+          <td><textarea class="stockInput priceNameInput" rows="${currentName.length>34?2:1}" onchange="updateNameValue(${p.id}, this.value)">${escapeHtml(currentName)}</textarea></td>
           <td><input type="text" class="stockInput priceUpcInput" value="${escapeHtml(currentUpc||'')}" onchange="updateUpcValue(${p.id}, this.value)"></td>
           <td>${escapeHtml(p.category)}</td>
           <td>$<input type="number" step="0.01" class="stockInput" value="${currentPrice}" onchange="updatePriceValue(${p.id}, this.value)"></td>`;
