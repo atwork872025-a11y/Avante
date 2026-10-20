@@ -212,7 +212,12 @@ table.dataTbl textarea.priceNameInput{font:inherit;font-size:13px;line-height:1.
     <!-- PRICES VIEW -->
     <div id="pricesView" class="flatView" style="display:none;">
       <h2>PRICES — Nombre, UPC y precio por producto</h2>
-      <div class="searchTop"><input type="text" id="pricesSearch" placeholder="Buscar producto o código..."></div>
+      <div class="searchTop" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <input type="text" id="pricesSearch" placeholder="Buscar producto o código..." style="flex:1;min-width:200px;">
+        <span id="pendingInfo" style="font-size:12.5px;color:#b45309;font-weight:700;"></span>
+        <button id="savePricesBtn" onclick="savePricesView()" style="background:#22c55e;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-weight:800;font-size:14px;cursor:pointer;">💾 SAVE</button>
+      </div>
+      <div style="font-size:12px;color:#6b7280;margin:4px 0 8px;">Marca/desmarca "Activo" y presiona SAVE: se guardan los cambios, se actualiza el catálogo de preorder y se descarga un Excel con los productos activos. <span style="opacity:.6">(v2026-10-20)</span></div>
       <table class="dataTbl">
         <thead><tr><th>Activo</th><th>Código</th><th>Producto (editable)</th><th>UPC (editable)</th><th>Categoría</th><th>Precio (editable)</th></tr></thead>
         <tbody id="pricesTbody"></tbody>
@@ -293,7 +298,7 @@ window.FIREBASE_CONFIG = {
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<script src="images.js?v=1792367189"></script>
+<script src="images.js?v=1792505469"></script>
 <script>
 
 
@@ -855,6 +860,8 @@ function getEffectivePrice(p){
   return p.price;
 }
 function isActive(p){ return getFieldOverride(p.id, 'hidden') !== true; }
+var stagedActive = {};   // {id: bool} cambios de "Activo" pendientes de SAVE
+function isActiveStaged(p){ return (p.id in stagedActive) ? stagedActive[p.id] : isActive(p); }
 function getBasePrice(p){
   const override = getPriceOverride(p.id);
   return override !== null ? override : p.price;
@@ -1284,8 +1291,8 @@ function renderPricesView(){
       const currentUpc = getEffectiveUpc(p);
       tbody.appendChild((() => {
         const tr = document.createElement('tr');
-        if(!isActive(p)) tr.style.opacity = '0.45';
-        tr.innerHTML = `<td style="text-align:center;"><input type="checkbox" ${isActive(p)?'checked':''} onchange="updateActiveValue(${p.id}, this.checked)" style="width:20px;height:20px;cursor:pointer;" title="Mostrar en catálogo"></td>
+        if(!isActiveStaged(p)) tr.style.opacity = '0.45';
+        tr.innerHTML = `<td style="text-align:center;"><input type="checkbox" ${isActiveStaged(p)?'checked':''} onchange="updateActiveValue(${p.id}, this.checked)" style="width:20px;height:20px;cursor:pointer;" title="Mostrar en catálogo"></td>
           <td>${escapeHtml(p.code)}</td>
           <td><textarea class="stockInput priceNameInput" rows="${currentName.length>34?2:1}" onchange="updateNameValue(${p.id}, this.value)">${escapeHtml(currentName)}</textarea></td>
           <td><input type="text" class="stockInput priceUpcInput" value="${escapeHtml(currentUpc||'')}" onchange="updateUpcValue(${p.id}, this.value)"></td>
@@ -1300,10 +1307,48 @@ function updatePriceValue(id, val){
   setPriceOverride(id, isNaN(v) ? 0 : v);
 }
 function updateActiveValue(id, checked){
-  setFieldOverride(id, 'hidden', !checked);
+  stagedActive[id] = checked;
+  const p = window.PRODUCTS.find(x => x.id === id);
+  if(p && isActive(p) === checked) delete stagedActive[id];   // volvió a su estado original
+  const n = Object.keys(stagedActive).length;
+  const el = document.getElementById('pendingInfo');
+  if(el) el.textContent = n ? ('● ' + n + ' cambio(s) sin guardar') : '';
+  renderPricesView();
+}
+async function savePricesView(){
+  const ids = Object.keys(stagedActive);
+  try{
+    if(ids.length){
+      if(FIREBASE_ON){
+        const batch = db.batch();
+        ids.forEach(id => batch.set(db.collection('prices').doc(String(id)), { hidden: !stagedActive[id] }, { merge: true }));
+        await batch.commit();
+      }
+      ids.forEach(id => {
+        if(!fieldOverrides[id]) fieldOverrides[id] = {};
+        fieldOverrides[id].hidden = !stagedActive[id];
+      });
+      if(!FIREBASE_ON) saveLS('avante_prices', fieldOverrides);
+    }
+  }catch(e){
+    console.error('Save error', e);
+    alert('No se pudo guardar en la nube: ' + (e && e.message ? e.message : e) + '\nRevisa las reglas de Firestore (colección "prices").');
+    return;
+  }
+  stagedActive = {};
+  const info = document.getElementById('pendingInfo'); if(info) info.textContent = '';
   if(!getCategories().includes(activeCategory)) activeCategory = "Todo";
-  renderSidebar(); renderProducts();
-  if(currentView === 'prices') renderPricesView();
+  renderSidebar(); renderProducts(); renderPricesView();
+  // Excel con los productos activos
+  const active = window.PRODUCTS.filter(isActive);
+  const rows = [['Código','Producto','UPC','Categoría','Precio']];
+  active.forEach(p => rows.push([p.code, getEffectiveName(p), getEffectiveUpc(p) || '', p.category, getBasePrice(p)]));
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws['!cols'] = [{wch:14},{wch:52},{wch:16},{wch:16},{wch:10}];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Activos');
+  XLSX.writeFile(wb, 'Productos_Activos_' + fileDateStr() + '.xlsx');
+  alert('Guardado. Productos activos en preorder: ' + active.length + ' de ' + window.PRODUCTS.length);
 }
 function updateNameValue(id, val){
   setFieldOverride(id, 'name', val.trim());
